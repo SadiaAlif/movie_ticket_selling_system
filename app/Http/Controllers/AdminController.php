@@ -13,7 +13,7 @@ class AdminController extends Controller
     }
     
     public function user_list(){
-        $users = User::where('role', '3')->get();
+        $users = User::where('role', '2')->get();
 
         return view ('admin.user.index', compact('users'));
     }

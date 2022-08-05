@@ -15,10 +15,11 @@
             <th>ID</th>
             <th>Name</th>
             <th>Photo</th>
-            <th>Category_name</th>
+            <th>Category_Name</th>
             <th>Description</th>
             <th>Duration</th>
-            <th>Booking_Status</th>
+           
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody class="table-border-bottom-0">

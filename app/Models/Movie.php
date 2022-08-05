@@ -11,9 +11,9 @@ class Movie extends Model
     protected $fillable = [
         'name',
         'photo',
-        'Category_name',
-        'Description',
-        'Duration',
-        'Booking_Status',
+        'category_name',
+        'description',
+        'duration',
+        'booking_Status',
     ];
 }
