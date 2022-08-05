@@ -77,38 +77,38 @@
     <section class="hero">
         <div class="container">
             <div class="hero__slider owl-carousel">
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/hero-1.jpg')}}">
+                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/spider.jpg')}}">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
-                                <div class="label">Adventure</div>
-                                <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                                <p>After 30 days of travel across the world...</p>
+                                <div class="label">Action/Adventure</div>
+                                <h2>Spider-Man: No Way Home</h2>
+                                <p>Peter Parker seeks Doctor Strange's help to make people forget about Spiderman's identity</p>
                                 <a href="#"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/hero-1.jpg')}}">
+                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/moana.jpg')}}">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
-                                <div class="label">Adventure</div>
-                                <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                                <p>After 30 days of travel across the world...</p>
-                                <a href="#"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
+                                <div class="label">Family/Adventure </div>
+                                <h2>Moana Sing-Along</h2>
+                                <p>Moana, daughter of chief Tui, embarks on a journey to return the heart...</p>
+                               
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/hero-1.jpg')}}">
+                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/twilight.jpg')}}">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
-                                <div class="label">Adventure</div>
-                                <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                                <p>After 30 days of travel across the world...</p>
-                                <a href="#"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
+                                <div class="label">Fantasy</div>
+                                <h2>The Twilight Saga</h2>
+                                <p>The Twilight Saga is a series of five vampire-themed romance fantasy films...</p>
+                                
                             </div>
                         </div>
                     </div>
@@ -698,7 +698,7 @@
                     <ul>
                         <li class="active"><a href="./index.html">Homepage</a></li>
                         <li><a href="./categories.html">Categories</a></li>
-                        <li><a href="./blog.html">Our Blog</a></li>
+                        <li><a href="./blog.html">About</a></li>
                         <li><a href="#">Contacts</a></li>
                     </ul>
                 </div>

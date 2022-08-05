@@ -33,6 +33,9 @@
             <td>{{ $movie->duration }}</td>
             <td>{{ $movie->booking_Status}}</td>
             <td>
+              <a class="btn btn-primary" href="{{route('admin.movie.edit',$movie->id)}}" 
+                onclick="return confirm ('Are you sure?')"><i class="fas fa-edit"></i> Edit</a>
+
               <a class="btn btn-danger" href="{{route('admin.movie.delete',$movie->id)}}" 
                 onclick="return confirm ('Are you sure?')"><i class="bx bx-trash me-1"></i> Delete</a>
             </td>

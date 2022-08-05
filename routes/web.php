@@ -29,8 +29,11 @@ Route::get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
+    $total_users = User::where('role', '2')->count();;
+    return view('admin.dashboard', compact('total_users'));
 })->middleware(['auth', 'admin'])->name('admin.dashboard');
+
+
 
 Route::get('/admin/profile', [AdminController::class,  'profile'])->middleware(['auth'])
  ->name('admin.profile');

@@ -39,7 +39,7 @@
                     class="form-control"
                     id="basic-icon-default-fullname"
                     name="name"
-                    placeholder="name"
+                    placeholder=" movies name"
                     aria-label=""
                     aria-describedby="basic-icon-default-fullname2"
                   />
@@ -67,7 +67,7 @@
               </div>
             </div>
             <div class="row mb-3">
-              <label class="col-sm-2 col-form-label" for="basic-icon-default-fullname">Movies Category</label>
+              <label class="col-sm-2 col-form-label" for="basic-icon-default-fullname">Movies Genre</label>
               <div class="col-sm-10">
                 <div class="input-group input-group-merge">
                   <span id="basic-icon-default-fullname2" class="input-group-text"
@@ -106,7 +106,7 @@
                     class="form-control"
                     id="basic-icon-default-fullname"
                     name="duration"
-                    placeholder="name"
+                    placeholder=" movies duration"
                     aria-label=""
                     aria-describedby="basic-icon-default-fullname2"
                   />
