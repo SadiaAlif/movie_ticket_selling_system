@@ -13,15 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('movies', function (Blueprint $table) {
+        Schema::create('ticket_books', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('photo');
-            $table->string('category_name');
-            $table->string('description');
-            $table->string('duration');
+            $table->integer('ticket_number');
+            $table->string('movie_id');
+            $table->string('movie_name');
+            $table->integer('user_id');
+            $table->string('user_name');
             $table->integer('price');
-            $table->integer('booking_status')->default(500);
+            $table->string('method');
+            $table->string('tnx_id');
+            $table->string('show_time');
+            $table->date('show_date');
             $table->timestamps();
         });
     }
@@ -33,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('movies');
+        Schema::dropIfExists('ticket_books');
     }
 };

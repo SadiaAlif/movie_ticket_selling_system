@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/owl.carousel.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('frontend/css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('frontend/css/dash.css')}}" type="text/css">
 </head>
 
 <body>
@@ -37,7 +36,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="{{route('home')}}">
+                        <a href="{{route('movies')}}">
                             <img src="{{ asset('frontend/img/logos/home2.png')}}" alt="">
                         </a>
                     </div>
@@ -70,69 +69,46 @@
     </header>
     <!-- Header End -->
 
-    <!-- Hero Section Begin -->
-    <section class="hero">
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
         <div class="container">
-            <div class="hero__slider owl-carousel">
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/spider.jpg')}}">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <div class="label">Action/Adventure</div>
-                                <h2>Spider-Man: No Way Home</h2>
-                                <p>Peter Parker seeks Doctor Strange's help to make people forget about Spiderman's identity</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/moana.jpg')}}">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <div class="label">Family/Adventure </div>
-                                <h2 class="text-dark">Moana Sing-Along</h2>
-                                <p class="text-dark">Moana, daughter of chief Tui, embarks on a journey to return the heart...</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/fan4.jpg')}}">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <div class="label">Action/Fantasy</div>
-                                <h2>Fantastic Four</h2>
-                                <p>Four astronauts gain extraordinary powers like invisibility and stretchability after being hit by cosmic radiation. ...</p>
-                            </div>
-                        </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="{{ route('home') }}"><i class="fa fa-home"></i> Home</a>
+                        <span>All movies</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Hero Section End -->
+    </div>
+    <!-- Breadcrumb End -->
 
     <!-- Product Section Begin -->
-    <section class="product spad">
+    <section class="product-page spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="trending__product">
-                        <div class="row">
-                            <div class="col-lg-8 col-md-8 col-sm-8">
-                                <div class="section-title">
-                                    <h4>Trending Now</h4>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <div class="btn__all">
-                                    <a href="{{ route('movies') }}" class="primary-btn">View All <span class="arrow_right"></span></a>
+                @foreach ($categories as $category)
+
+                @php
+                    $category_movies = $movies->where('category_name', $category->name);
+                @endphp
+
+
+                @if ($category_movies->count() > 0)
+                    <div class="col-lg-12">
+                    <div class="product__page__content">
+                        <div class="product__page__title">
+                            <div class="row">
+                                <div class="col-lg-8 col-md-8 col-sm-6">
+                                    <div class="section-title">
+                                        <h4>{{ $category->name }}</h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-
-                            @foreach ($movies as $item)
+                            @foreach ($category_movies as $item)
 
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
@@ -149,14 +125,27 @@
                             </div>
                                 
                             @endforeach
-
                         </div>
                     </div>
                 </div>
+                @endif
+                    
+                @endforeach
+                
         </div>
     </div>
 </div>
 </div>
+</div>
+</div>
+</section>
+<!-- Product Section End -->
+</div>
+</div><!-- Button trigger modal -->
+
+
+
+
 </div>
 </div>
 </section>
@@ -171,7 +160,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="footer__logo">
-                    <a href="{{route('home')}}"><img src="{{ asset('frontend/img/logos/home2.png')}}" alt=""></a>
+                    <a href="{{route('movies')}}"><img src="{{ asset('frontend/img/logos/home2.png')}}" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">

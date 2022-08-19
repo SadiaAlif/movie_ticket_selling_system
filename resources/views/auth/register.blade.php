@@ -50,7 +50,6 @@
                 <select class="form-select"  style="width: 100%" aria-label="Default select example" name="role">
                   <option selected>Select role</option>
                   <option value="2">User</option>
-                  <option value="3">Customer</option>
                 </select>
             </div>
 

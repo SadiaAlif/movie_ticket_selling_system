@@ -143,6 +143,22 @@
             </ul>
           </li>  
 
+          
+
+          <li class="menu-item">
+            <a href="{{route('admin.ticket_list')}}" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-layout"></i>
+              <div data-i18n="Analytics">Ticket List</div>
+            </a>
+          </li>
+
+          <li class="menu-item">
+            <a href="{{route('admin.contact_list')}}" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-layout"></i>
+              <div data-i18n="Analytics">Contact List</div>
+            </a>
+          </li>
+
             
           </ul>
         </aside>
@@ -197,6 +213,16 @@
                         <span class="align-middle">My Profile</span>
                       </a>
                     </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="{{route ('home')}}">
+                        <i class="bx bx-home me-2"></i>
+                        <span class="align-middle">Home Page</span>
+                      </a>
+                    </li>
+
                     <li>
                       <div class="dropdown-divider"></div>
                     </li>

@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/owl.carousel.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('frontend/css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('frontend/css/dash.css')}}" type="text/css">
 </head>
 
 <body>
@@ -37,7 +36,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="{{route('home')}}">
+                        <a href="{{route('contact')}}">
                             <img src="{{ asset('frontend/img/logos/home2.png')}}" alt="">
                         </a>
                     </div>
@@ -60,6 +59,7 @@
                                 <li><a href="{{route('login')}}" class="btn btn-primary btn-sm  m-3">Login</a></li>
                                 <li><a href="{{route('register')}}" class="btn btn-primary btn-sm">Register</a></li>
                                 @endif
+                                
                             </ul>
                         </nav>
                     </div>
@@ -70,93 +70,78 @@
     </header>
     <!-- Header End -->
 
-    <!-- Hero Section Begin -->
-    <section class="hero">
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
         <div class="container">
-            <div class="hero__slider owl-carousel">
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/spider.jpg')}}">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <div class="label">Action/Adventure</div>
-                                <h2>Spider-Man: No Way Home</h2>
-                                <p>Peter Parker seeks Doctor Strange's help to make people forget about Spiderman's identity</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/moana.jpg')}}">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <div class="label">Family/Adventure </div>
-                                <h2 class="text-dark">Moana Sing-Along</h2>
-                                <p class="text-dark">Moana, daughter of chief Tui, embarks on a journey to return the heart...</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/fan4.jpg')}}">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <div class="label">Action/Fantasy</div>
-                                <h2>Fantastic Four</h2>
-                                <p>Four astronauts gain extraordinary powers like invisibility and stretchability after being hit by cosmic radiation. ...</p>
-                            </div>
-                        </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="{{ route('home') }}"><i class="fa fa-home"></i> Home</a>
+                        <span>Contact</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Hero Section End -->
+    </div>
+    <!-- Breadcrumb End -->
 
-    <!-- Product Section Begin -->
-    <section class="product spad">
+    <!-- Anime Section Begin -->
+    <section class="anime-details spad">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="trending__product">
-                        <div class="row">
-                            <div class="col-lg-8 col-md-8 col-sm-8">
-                                <div class="section-title">
-                                    <h4>Trending Now</h4>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <div class="btn__all">
-                                    <a href="{{ route('movies') }}" class="primary-btn">View All <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
+            
+            <div class="blog__details__form">
+                <h4 class="text-center">Leave A Message</h4>
 
-                            @foreach ($movies as $item)
+                @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{ $message }}</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @endif
 
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="/storage/{{ $item->photo }}">
-                                        
-                                    </div>
-                                    <div class="product__item__text">
-                                        <ul>
-                                            <li>{{ $item->category_name }}</li>
-                                        </ul>
-                                        <h5><a href="{{ route('details', $item->id) }}">{{ $item->name }}</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                                
+                @if ($errors->any())
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
                             @endforeach
+                        </ul>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
 
+                <form action="{{ route('admin.contact') }}" method="POST">
+                    @csrf
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <input type="text" name="name" placeholder="Name">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <input type="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <input type="text" name="subject" placeholder="Subject">
+                        </div>
+                        <div class="col-lg-12">
+                            <textarea placeholder="Message" name="message"></textarea>
+                            <button type="submit" class="site-btn">Send Message</button>
                         </div>
                     </div>
-                </div>
+                </form>
+            </div>
         </div>
-    </div>
+    </section>
+    <!-- Anime Section End -->
 </div>
-</div>
+</div><!-- Button trigger modal -->
+
+
+
+
 </div>
 </div>
 </section>
@@ -171,7 +156,8 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="footer__logo">
-                    <a href="{{route('home')}}"><img src="{{ asset('frontend/img/logos/home2.png')}}" alt=""></a>
+                    <a href="{{route('contact')}}">
+                        <img src="{{ asset('frontend/img/logos/home2.png')}}" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">

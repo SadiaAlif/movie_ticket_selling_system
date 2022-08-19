@@ -1,6 +1,6 @@
 @extends('admin.partials.master')
 @section('page-title')
-  <title>Profile</title>
+  <title> My Profile</title>
 @endsection
 
 @section('page-content')

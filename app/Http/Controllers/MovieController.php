@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Movie;
 use App\Models\Category;
+use App\Models\TicketBook;
+
 use Storage;
 
 class MovieController extends Controller
@@ -29,6 +31,8 @@ class MovieController extends Controller
             'category_name' => 'required',
             'description' => 'required',
             'duration' => 'required',
+            'price' => 'required',
+            'booking_status' => 'required',
         ]);
         if($request->file('photo')){
             $photo = Storage::disk('public')->put('backend/img/movie', $request->file('photo'));
@@ -40,11 +44,53 @@ class MovieController extends Controller
             'category_name' => $request->category_name,
             'description' => $request->description,
             'duration' => $request->duration,
+            'price' => $request->price,
+            'booking_status' => $request->booking_status,
         ]);
 
         return redirect()->route('admin.movie.create')->with('success', 'Successfully add movie.');
     }
 
+    public function edit($id){
+        $movie = Movie::find($id);
+        $categories= Category::get();
+        return view('admin.movie.edit', compact('movie', 'categories'));
+    }
+
+    public function update(Request $request, $id){
+        $validated = $request->validate([
+            'name' => 'required',
+            'photo' => 'nullable',
+            'category_name' => 'required',
+            'description' => 'required',
+            'duration' => 'required',
+            'price' => 'required',
+            'booking_status' => 'required',
+            
+        ]);
+
+        $movie = Movie::find($id);
+
+        if($request->file('photo')){
+            $photo = Storage::disk('public')->put('backend/img/movie', $request->file('photo'));
+        }else{
+            $photo = $movie->photo;
+        }
+
+        $movie->name = $request->name;
+        $movie->photo = $photo;
+        $movie->category_name = $request->category_name;
+        $movie->description = $request->description;
+        $movie->duration = $request->duration;
+        $movie->price = $request->price;
+        $movie->booking_status = $request->booking_status;
+
+        $movie->save();
+    
+        return redirect()->route('admin.movie.index')->with('success', 'Successfully update movie.');
+    }
+
+    
     public function delete($id){
         $movie = Movie::find($id);
 
@@ -53,4 +99,41 @@ class MovieController extends Controller
         return redirect()->route('admin.movie.index');
     }
 
+    public function details($id){
+        $movie = Movie::find($id);
+
+        return view('frontend.details', compact('movie'));
+    }
+    
+    public function buy_ticket(Request $request){
+        $validated = $request->validate([
+            'ticket_number' => 'required',
+            'movie_id' => 'required',
+            'movie_name' => 'required',
+            'user_id' => 'required',
+            'user_name' => 'required',
+            'price' => 'required',
+            'method' => 'required',
+            'tnx_id' => 'required',
+            'show_time' => 'required',
+            'show_date' => 'required',
+        ]);
+
+
+        TicketBook::create($validated);
+
+
+        $movie = Movie::find($request->movie_id);
+
+        $booking_status = $movie->booking_status;
+
+        $movie->booking_status == $booking_status-1;
+
+        $movie->save();
+
+
+        return redirect()->route('details', $request->movie_id)->with('success', 'Movie ticket buy successfully.');
+    }
+
+    
 }

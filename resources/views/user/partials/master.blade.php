@@ -84,49 +84,13 @@
               </a>
             </li>
 
-             <!-- Category -->
-             <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <li class="menu-item">
+              <a href="{{route('user.ticket_list')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Category</div>
+                <div data-i18n="Analytics">Ticket List</div>
               </a>
+            </li>
 
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="{{ route('admin.category.index') }}" class="menu-link">
-                    <div data-i18n="Without menu">All Category</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="{{ route('admin.category.create') }}" class="menu-link">
-                    <div data-i18n="Without navbar">Add Category</div>
-                  </a>
-                </li>
-              </ul>
-            </li> 
-
-            <!-- Food -->
-            {{-- <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Food</div>
-              </a>
-
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="{{ route('admin.food.index') }}" class="menu-link">
-                    <div data-i18n="Without menu">All Food</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="{{ route('admin.food.create') }}" class="menu-link">
-                    <div data-i18n="Without navbar">Add Food</div>
-                  </a>
-                </li>
-              </ul>
-            </li> --}}
-
-            
           </ul>
         </aside>
         <!-- / Menu -->
