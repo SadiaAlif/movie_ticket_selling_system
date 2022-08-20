@@ -45,22 +45,38 @@
                 <div class="col-lg-8">
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
-                            <ul>
-                                <li><a href="{{route('home')}}">Home</a></li>
-                                <li><a href="{{route('movies')}}">All movie</a></li>
-                                <li><a href="{{route('contact')}}">Contact Us</a></li>
-                                @if (isset(auth()->user()->id))
-                                    @if(auth()->user()->role == '1')
-                                    <li><a href="{{route('admin.dashboard')}}" class="btn btn-primary btn-sm  m-3">Dashboard</a></li>
-                                    @else
-                                    <li><a href="{{route('user.dashboard')}}" class="btn btn-primary btn-sm  m-3">Dashboard</a></li>
-                                    @endif
-                                    <li><a href="{{route('logout')}}" class="btn btn-warning btn-sm  m-3 text-dark">Logout</a></li>
-                                @else
-                                <li><a href="{{route('login')}}" class="btn btn-primary btn-sm  m-3">Login</a></li>
-                                <li><a href="{{route('register')}}" class="btn btn-primary btn-sm">Register</a></li>
-                                @endif
-                            </ul>
+                            <div class="row">
+                                <div class="col-10">
+                                    <ul>
+                                        <li><a href="{{route('home')}}">Home</a></li>
+                                        <li><a href="{{route('movies')}}">All movie</a></li>
+                                        <li><a href="{{route('contact')}}">Contact Us</a></li>
+                                        @if (isset(auth()->user()->id))
+                                            @if(auth()->user()->role == '1')
+                                            <li><a href="{{route('admin.dashboard')}}" class="btn btn-primary btn-sm  m-3">Dashboard</a></li>
+                                            @else
+                                            <li><a href="{{route('user.dashboard')}}" class="btn btn-primary btn-sm  m-3">Dashboard</a></li>
+                                            @endif
+                                            <li><a href="{{route('logout')}}" class="btn btn-warning btn-sm  m-3 text-dark">Logout</a></li>
+                                        @else
+                                        <li><a href="{{route('login')}}" class="btn btn-primary btn-sm  m-3">Login</a></li>
+                                        <li><a href="{{route('register')}}" class="btn btn-primary btn-sm">Register</a></li>
+                                        @endif
+                                        
+                                    </ul>
+                                </div>
+                                <div class="col-2">
+                                    <div class="header__right">
+                                        <div class="">
+                                        <form class="search-model-form">
+                                            <input type="text" id="search-input" placeholder="Search here...">
+                                        </form>
+                                        </div>
+                                        <div class="ms-4 search-close-switch"><i class="icon_search me-3"></i></div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </nav>
                     </div>
                 </div>

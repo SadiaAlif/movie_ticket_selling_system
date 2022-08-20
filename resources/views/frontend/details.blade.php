@@ -123,7 +123,7 @@
                             </div>
                             <div class="anime__details__btn">
                                 @if (isset(auth()->user()->id))
-                                    @if(auth()->user()->role == '2')
+                                    @if(auth()->user()->role == '2' && $movie->booking_status > 0)
                                     <a class="btn watch-btn" data-toggle="modal" data-target="#exampleModalCenter">
                                         <span>Buy Now</span> <i class="fa fa-angle-right"></i>
                                     </a>
@@ -179,7 +179,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle"> Book Tickets</h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle"> BOOK TICKET</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -219,8 +219,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Book Now</button>
+        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-info">BOOK NOW</button>
       </div>
     </div>
   </div>

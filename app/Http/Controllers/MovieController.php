@@ -126,8 +126,9 @@ class MovieController extends Controller
         $movie = Movie::find($request->movie_id);
 
         $booking_status = $movie->booking_status;
+        
 
-        $movie->booking_status == $booking_status-1;
+        $movie->booking_status = $booking_status-1;
 
         $movie->save();
 

@@ -52,7 +52,7 @@
             <td>{{ $movie->duration }}</td>
             <td>
               @if ($movie->booking_status > 0)
-                  <strong class="badge bg-success">Available</strong>
+                  <strong class="badge bg-success">{{ $movie->booking_status }} Available</strong>
               @else
               <strong class="badge bg-warning">Unavailabe</strong>
               @endif

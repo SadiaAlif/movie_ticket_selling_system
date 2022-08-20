@@ -87,7 +87,7 @@
             <li class="menu-item">
               <a href="{{route('user.ticket_list')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Analytics">Ticket List</div>
+                <div data-i18n="Analytics">Booked List</div>
               </a>
             </li>
 
@@ -142,6 +142,15 @@
                       <a class="dropdown-item" href="{{route ('user.dashboard')}}">
                         <i class="bx bx-user me-2"></i>
                         <span class="align-middle">My Profile</span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="{{route ('home')}}">
+                        <i class="bx bx-home me-2"></i>
+                        <span class="align-middle">Home Page</span>
                       </a>
                     </li>
                     <li>
@@ -213,5 +222,18 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <script>
+      function printDiv(divName) {
+          var printContents = document.getElementById(divName).innerHTML;
+          var originalContents = document.body.innerHTML;
+  
+          document.body.innerHTML = printContents;
+  
+          window.print();
+  
+          document.body.innerHTML = originalContents;
+      }
+    </script>
   </body>
 </html>
