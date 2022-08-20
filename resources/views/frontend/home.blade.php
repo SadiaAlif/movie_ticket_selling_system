@@ -72,7 +72,7 @@
                                             <input type="text" id="search-input" placeholder="Search here...">
                                         </form>
                                         </div>
-                                        <div class="ms-4 search-close-switch"><i class="icon_search me-3"></i></div>
+                                        
                                     </div>
                                 </div>
 

@@ -6,7 +6,7 @@
 
 @section('page-content')
 <div class="container-xxl flex-grow-1 container-p-y">
-  <div class="card">
+  <div class="card" id="printableArea">
     <h5 class="card-header">All Ticket</h5>
 
     <div class="table-responsive text-nowrap">
@@ -36,5 +36,6 @@
       </table>
     </div>
   </div>
+  <button type="button" class="btn btn-success m-3" onclick="printDiv('printableArea')">Download Invoice</button>
 </div>
 @endsection
