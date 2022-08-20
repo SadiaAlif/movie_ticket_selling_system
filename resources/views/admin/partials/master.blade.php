@@ -87,7 +87,7 @@
              <!-- Category -->
              <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <i class="menu-icon fa-regular fa-box-check"></i>
                 <div data-i18n="Layouts">Category</div>
               </a>
 
@@ -108,7 +108,7 @@
              <!-- Movie -->
              <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <i class="menu-icon fa-solid fa-camera-movie"></i>
                 <div data-i18n="Layouts">Movie</div>
               </a>
 
@@ -129,7 +129,7 @@
            <!-- User -->
            <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-              <i class="menu-icon tf-icons bx bx-layout"></i>
+              <i class="menu-icon fa-solid fa-user"></i>
               <div data-i18n="Layouts"> User</div>
             </a>
 
