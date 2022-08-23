@@ -17,3 +17,8 @@
 .text{
     color: #203c57;
 }
+
+.card_h{
+    background-image: url("../img/backgrounds/hall.jpg");
+    background-size: cover;
+   }

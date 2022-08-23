@@ -225,18 +225,5 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-    <script>
-      function printDiv(divName) {
-          var printContents = document.getElementById(divName).innerHTML;
-          var originalContents = document.body.innerHTML;
-  
-          document.body.innerHTML = printContents;
-  
-          window.print();
-  
-          document.body.innerHTML = originalContents;
-      }
-    </script>
   </body>
 </html>

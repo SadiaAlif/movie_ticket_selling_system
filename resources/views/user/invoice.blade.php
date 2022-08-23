@@ -113,7 +113,7 @@
         <div class="body-section">
             <div class="row">
                 <div class="col-6">
-                    <h2 class="heading">Invoice No.: 001</h2>
+                    <h2 class="heading"></h2>
                     <p class="sub-heading">Tracking No. fabcart2025 </p>
                     <p class="sub-heading">Order Date: 20-20-2021 </p>
                     <p class="sub-heading">Email Address: customer@gfmail.com </p>
@@ -133,8 +133,8 @@
             <table class="table-bordered">
                 <thead>
                     <tr>
-                        <th class="w-10">ID</th>
-                        <th class="w-10">Movie Name</th>
+                        <th class="w-2">ID</th>
+                        <th class="w-20">Movie Name</th>
                         <th class="w-10">Price</th>
                         <th class="w-10">Time</th>
                         <th class="w-10">Date</th>
@@ -166,6 +166,17 @@
             <h3 class="heading">Payment Status: Paid</h3>
         </div>
  </div>      
+ <script>
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
 
+        document.body.innerHTML = printContents;
+
+        window.print();
+
+        document.body.innerHTML = originalContents;
+    }
+  </script>
 </body>
 </html>

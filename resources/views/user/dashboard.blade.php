@@ -59,8 +59,6 @@
                   <p class="text-muted mb-0">{{ auth()->user()->address }}</p>
                 </div>
               </div>
-              
-              
             </div>
         </div>
     </div>
