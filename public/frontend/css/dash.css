@@ -1,5 +1,5 @@
 .back{
-    background-image: url("../img/backgrounds/4.jpg");
+    background-image: url("../img/backgrounds/bg.jpg");
     background-color: #cccccc;
     background-repeat: no-repeat;
     background-size: cover;
@@ -9,7 +9,7 @@
 .moana{
     color: black;
 }
-.side{
-    background-image: linear-gradient(45deg, rgb(100, 217, 253) 0%, rgb(101, 193, 254) 10%,rgb(204, 87, 133) 10%, rgb(80, 151, 192) 45%,rgb(73, 106, 155) 45%, rgb(85, 73, 155) 70%,rgb(15, 28, 65) 70%, rgb(64, 59, 105) 81%,rgb(56, 45, 65) 81%, rgb(56, 45, 65) 88%,rgb(6, 31, 42) 88%, rgb(6, 31, 42) 100%);
 
+.side{
+    background-image: linear-gradient(45deg, rgba(12, 15, 22, 0.692) 0%, rgba(85, 145, 223, 0.863) 10%,rgb(47, 124, 212) 10%, rgb(158, 68, 41) 45%,rgba(167, 16, 16, 0.473) 45%, rgb(155, 73, 94) 70%,rgb(15, 28, 65) 70%, rgb(64, 59, 105) 81%,rgb(56, 45, 65) 81%, rgb(56, 45, 65) 88%,rgb(6, 31, 42) 88%, rgb(6, 31, 42) 100%);
 }

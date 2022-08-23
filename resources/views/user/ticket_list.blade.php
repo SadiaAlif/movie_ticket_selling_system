@@ -36,6 +36,6 @@
       </table>
     </div>
   </div>
-  <button type="button" class="btn btn-success m-3" onclick="printDiv('printableArea')">Download Invoice</button>
+  <button type="button" class="btn btn-success m-3" onclick="printDiv('printableArea')">Download</button>
 </div>
 @endsection

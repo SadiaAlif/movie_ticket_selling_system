@@ -65,7 +65,7 @@
           <div class="app-brand demo">
             <a href="{{route('user.dashboard')}}" class="app-brand-link">
               
-              <span class="app-brand-text demo menu-text fw-bolder ms-2 text-uppercase">My Profile</span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2 text-uppercase text-dark">My Profile</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -79,15 +79,15 @@
             <!-- Dashboard -->
             <li class="menu-item active">
               <a href="{{route('user.dashboard')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Dashboard</div>
+                <i class="menu-icon tf-icons bx bx-home"></i>
+                <div data-i18n="Analytics" class="text-dark">Dashboard</div>
               </a>
             </li>
 
             <li class="menu-item">
               <a href="{{route('user.ticket_list')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Analytics">Booked List</div>
+                <i class="menu-icon tf-icons bx bx-list-check"></i>
+                <div data-i18n="Analytics" class="text-dark" >Booked List</div>
               </a>
             </li>
 
@@ -106,6 +106,9 @@
               <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
                 <i class="bx bx-menu bx-sm"></i>
               </a>
+            </div>
+            <div class="col-12 col-sm-6">
+              <h3 class="header text-dark">Welcome To Your Profile.</h3>
             </div>
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">

@@ -45,8 +45,6 @@
                 <div class="col-lg-8">
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
-                            <div class="row">
-                                <div class="col-10">
                                     <ul>
                                         <li><a href="{{route('home')}}">Home</a></li>
                                         <li><a href="{{route('movies')}}">All movie</a></li>
@@ -61,22 +59,8 @@
                                         @else
                                         <li><a href="{{route('login')}}" class="btn btn-primary btn-sm  m-3">Login</a></li>
                                         <li><a href="{{route('register')}}" class="btn btn-primary btn-sm">Register</a></li>
-                                        @endif
-                                        
-                                    </ul>
-                                </div>
-                                <div class="col-2">
-                                    <div class="header__right">
-                                        <div class="">
-                                        <form class="search-model-form">
-                                            <input type="text" id="search-input" placeholder="Search here...">
-                                        </form>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-
-                            </div>
+                                        @endif                                      
+                                    </ul>                          
                         </nav>
                     </div>
                 </div>
@@ -137,7 +121,7 @@
                         <div class="row">
                             <div class="col-lg-8 col-md-8 col-sm-8">
                                 <div class="section-title">
-                                    <h4>Trending Now</h4>
+                                    <h4>Now Showing</h4>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4">
@@ -201,7 +185,7 @@
             </div>
             <div class="col-lg-3">
                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This is made by Sadia Alif <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 
               </div>

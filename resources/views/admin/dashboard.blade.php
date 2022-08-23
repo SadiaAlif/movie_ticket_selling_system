@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="col-lg-6 col-md-12 col-6 mb-4">
-          <div class="card">
+          <div class="card side">
             <div class="card-body">
               <div class="card-title d-flex align-items-start justify-content-between">
                 <div class="avatar flex-shrink-0">
@@ -50,7 +50,7 @@
     <div class="col-md-12">
       <div class="row">
         <div class="col-6 mb-4">
-          <div class="card">
+          <div class="card side">
             <div class="card-body">
               <div class="card-title d-flex align-items-start justify-content-between">
                 <div class="avatar flex-shrink-0">
@@ -65,7 +65,7 @@
         </div>
 
         <div class="col-6 mb-4">
-          <div class="card">
+          <div class="card side">
             <div class="card-body">
               <div class="card-title d-flex align-items-start justify-content-between">
                 <div class="avatar flex-shrink-0">
