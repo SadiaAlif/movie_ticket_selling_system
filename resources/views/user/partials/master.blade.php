@@ -19,7 +19,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('backend/img/favicon/favicon.ico') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('backend/img/favicon/micon.png') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -64,7 +64,7 @@
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
             <a href="{{route('user.dashboard')}}" class="app-brand-link">
-              
+              <img src="{{ asset('frontend/img/logos/micon.png') }}" alt class="w-px-40 h-auto rounded-circle" />
               <span class="app-brand-text demo menu-text fw-bolder ms-2 text-uppercase text-dark">My Profile</span>
             </a>
 

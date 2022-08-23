@@ -61,7 +61,7 @@
       <div class="layout-container">
         <!-- Menu -->
       
-        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme ">
           
           <div class="app-brand demo">
             <a href="{{route('admin.dashboard')}}" class="app-brand-link">
@@ -82,24 +82,24 @@
             <li class="menu-item active">
               <a href="{{route('admin.dashboard')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home"></i>
-                <div data-i18n="Analytics text-dark">Dashboard</div>
+                <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
           
              <!-- Category -->
-             <li class="menu-item">
+             <li class="menu-item active">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-category"></i>
                 <div data-i18n="Layouts">Category</div>
               </a>
 
               <ul class="menu-sub">
-                <li class="menu-item">
+                <li class="menu-item active">
                   <a href="{{ route('admin.category.index') }}" class="menu-link">
                     <div data-i18n="Without menu">All Category</div>
                   </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item active">
                   <a href="{{ route('admin.category.create') }}" class="menu-link">
                     <div data-i18n="Without navbar">Add Category</div>
                   </a>
@@ -108,19 +108,19 @@
             </li> 
 
              <!-- Movie -->
-             <li class="menu-item">
+             <li class="menu-item active">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-film"></i>
                 <div data-i18n="Layouts">Movie</div>
               </a>
 
               <ul class="menu-sub">
-                <li class="menu-item">
+                <li class="menu-item active">
                   <a href="{{ route('admin.movie.index') }}" class="menu-link">
                     <div data-i18n="Without menu">All Movie</div>
                   </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item active">
                   <a href="{{ route('admin.movie.create') }}" class="menu-link">
                     <div data-i18n="Without navbar">Add Movie</div>
                   </a>
@@ -129,14 +129,14 @@
             </li>  
           
            <!-- User -->
-           <li class="menu-item">
+           <li class="menu-item active">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
               <i class="menu-icon tf-icons bx bx-user"></i>
               <div data-i18n="Layouts"> User</div>
             </a>
 
             <ul class="menu-sub">
-              <li class="menu-item">
+              <li class="menu-item active">
                 <a href="{{ route('admin.user.list') }}" class="menu-link">
                   <div data-i18n="Without menu">All User</div>
                 </a>
@@ -145,16 +145,14 @@
             </ul>
           </li>  
 
-          
-
-          <li class="menu-item">
+          <li class="menu-item active">
             <a href="{{route('admin.ticket_list')}}" class="menu-link">
               <i class="menu-icon fa-solid fa-ticket"></i>
               <div data-i18n="Analytics">Ticket Booked List</div>
             </a>
           </li>
 
-          <li class="menu-item">
+          <li class="menu-item active">
             <a href="{{route('admin.contact_list')}}" class="menu-link">
               <i class="menu-icon tf-icons bx bx-message"></i>
               <div data-i18n="Analytics">Contact List</div>
@@ -180,7 +178,7 @@
               </a>
             </div> 
             <div class="col-12 col-sm-6">
-              <h3 class="header">Welcome to Admin Dashboard.</h3>
+              <h3 class="header text">Welcome to Admin Dashboard.</h3>
             </div>
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
