@@ -54,7 +54,7 @@
               @if ($movie->booking_status > 0)
                   <strong class="badge bg-success">{{ $movie->booking_status }} Available</strong>
               @else
-              <strong class="badge bg-warning">Unavailabe</strong>
+              <strong class="badge bg-danger">Unavailabe</strong>
               @endif
             </td>
             <td>

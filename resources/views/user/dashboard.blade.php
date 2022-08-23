@@ -39,24 +39,28 @@
                   <p class="text-muted mb-0">{{ auth()->user()->email }}</p>
                 </div>
               </div>
+
               <hr>
               <div class="row">
                 <div class="col-sm-3">
                   <p class="mb-0">Phone</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">029809897</p>
+                  <p class="text-muted mb-0">{{ auth()->user()->phone }}</p>
                 </div>
               </div>
+              
               <hr>
               <div class="row">
                 <div class="col-sm-3">
                   <p class="mb-0">Address</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0"> Road 12, Sector 10, Uttara 1230,Dhaka</p>
+                  <p class="text-muted mb-0">{{ auth()->user()->address }}</p>
                 </div>
               </div>
+              
+              
             </div>
         </div>
     </div>

@@ -19,6 +19,7 @@
             <th>Time</th>
             <th>Date</th>
             <th>Ticket Number</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody class="table-border-bottom-0">
@@ -30,6 +31,7 @@
             <td>{{ $ticket->show_time }}</td>
             <td>{{ $ticket->show_date }}</td>
             <td>{{ $ticket->ticket_number }}</td>
+            <td> <a class="btn btn-primary" href="{{ route('user.invoice') }}">Invoice</a></td>
           </tr>
           @endforeach
         </tbody>

@@ -17,4 +17,9 @@ class UserController extends Controller
         $tickets = TicketBook::where('user_id', auth()->user()->id)->get();
         return view('user.ticket_list', compact('tickets'));
     }
+    public function invoice(){
+
+        $invoice= TicketBook::get();
+        return view ('user.invoice', compact('invoice')); 
+}
 }

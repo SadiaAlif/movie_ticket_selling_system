@@ -128,10 +128,10 @@
                                         <span>Buy Now</span> <i class="fa fa-angle-right"></i>
                                     </a>
                                     @elseif(auth()->user()->role == '1')
-                                    <strong class="p-3 bg-warning text-dark">Login as User to buy ticket.</strong>
+                                    <strong class="p-3 bg-warning text-dark">Login as User to buy a ticket.</strong>
                                     @endif
                                     @if($movie->booking_status <= 0)
-                                    <strong class="p-3 bg-warning text-dark">Movie ticket unavailable.</strong>
+                                    <strong class="p-3 bg-danger text-dark">Movie ticket unavailable.</strong>
                                     @endif
                                     
                                 @else
@@ -202,7 +202,7 @@
                     <option value="9:00 AM">9:00 AM</option>
                     <option value="12:00 PM">12:00 PM</option>
                     <option value="4:00 PM">4:00 PM</option>
-                    <option value="7:00 PM">7:00 PM</option>
+                    <option value="7:00 PM">8:00 PM</option>
                 </select>
             </div>
             <div class="col-md-6">
@@ -218,9 +218,10 @@
             <input class="form-control" type="hidden" name="price" value="{{ $movie->price }}">
         </div>
       </div>
+      
       <div class="modal-footer">
         <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-info">BOOK NOW</button>
+        <button type="submit" class="btn btn-success">BOOK NOW</button>
       </div>
     </div>
   </div>
