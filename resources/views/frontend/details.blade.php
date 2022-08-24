@@ -208,6 +208,15 @@
             <div class="col-md-6">
                 <input class="form-control" type="date" name="show_date" placeholder="Transaction ID">
             </div>
+            <div class="col-md-6 mt-2">
+                <select class="form-control" name="branch">
+                    <option>Select Branch</option>
+                    <option value="Uttara">Uttara</option>
+                    <option value="Bashundhara">Bashundhara</option>
+                    <option value="Dhanmondi">Dhanmondi</option>
+                    <option value="Banani">Banani</option>
+                </select>
+            </div>
             <input class="form-control" type="hidden" name="ticket_number" value="{{ uniqid() }}">
             @auth
             <input class="form-control" type="hidden" name="movie_id" value="{{ $movie->id }}">

@@ -117,8 +117,9 @@ class MovieController extends Controller
             'tnx_id' => 'required',
             'show_time' => 'required',
             'show_date' => 'required',
+            'branch' => 'required',
         ]);
-
+        
 
         TicketBook::create($validated);
 

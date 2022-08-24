@@ -136,6 +136,7 @@
                         <th class="w-10">Method</th>
                         <th class="w-10">Time</th>
                         <th class="w-10">Date</th>
+                        <th class="w-10">Branch</th>
                         <th class="w-10">Ticket Number</th>
                     </tr>
                 </thead>
@@ -147,6 +148,7 @@
                         <td>{{ $invoice->method }}</td>
                         <td>{{ $invoice->show_time }}</td>
                         <td>{{ $invoice->show_date }}</td>
+                        <td>{{ $invoice->branch }}</td>
                         <td>{{ $invoice->ticket_number }}</td>
                     </tr>
                 </tbody>

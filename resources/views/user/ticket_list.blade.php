@@ -18,6 +18,7 @@
             <th>Price</th>
             <th>Time</th>
             <th>Date</th>
+            <th>Branch</th>
             <th>Ticket Number</th>
             <th>Action</th>
           </tr>
@@ -30,6 +31,7 @@
             <td>{{ $ticket->price }}</td>
             <td>{{ $ticket->show_time }}</td>
             <td>{{ $ticket->show_date }}</td>
+            <td>{{ $ticket->branch }}</td>
             <td>{{ $ticket->ticket_number }}</td>
             <td> <a class="btn btn-primary" href="{{ route('user.invoice', $ticket->id) }}">Invoice</a></td>
           </tr>

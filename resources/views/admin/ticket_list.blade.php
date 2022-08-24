@@ -19,6 +19,7 @@
             <th>Price</th>
             <th>Time</th>
             <th>Date</th>
+            <th>Branch</th>
             <th>Ticket Number</th>
             <th>Method</th>
             <th>TNX</th>
@@ -33,6 +34,7 @@
             <td>{{ $ticket->price }}</td>
             <td>{{ $ticket->show_time }}</td>
             <td>{{ $ticket->show_date }}</td>
+            <td>{{ $ticket->branch }}</td>
             <td>{{ $ticket->ticket_number }}</td>
             <td>{{ $ticket->method }}</td>
             <td>{{ $ticket->tnx_id }}</td>

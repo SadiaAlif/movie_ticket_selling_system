@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('tnx_id');
             $table->string('show_time');
             $table->date('show_date');
+            $table->string('branch');
             $table->timestamps();
         });
     }
