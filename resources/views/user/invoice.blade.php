@@ -105,9 +105,9 @@
                 </div>
                 <div class="col-6">
                     <div class="company-details">
-                        <p class="text-white">company name dibi</p>
-                        <p class="text-white">adress dibi</p>
-                        <p class="text-white">+91 paykhana</p>
+                        <p class="text-white"> Cineplex Entertainment</p>
+                        <p class="text-white">Uttara,Dhaka-1230<p>
+                        <p class="text-white">+880 1902404956</p>
                     </div>
                 </div>
             </div>
