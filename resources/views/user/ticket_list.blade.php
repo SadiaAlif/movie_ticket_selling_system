@@ -6,7 +6,7 @@
 
 @section('page-content')
 <div class="container-xxl flex-grow-1 container-p-y">
-  <div class="card" id="printableArea">
+  <div class="card">
     <h5 class="card-header">All Ticket</h5>
 
     <div class="table-responsive text-nowrap">
@@ -31,13 +31,12 @@
             <td>{{ $ticket->show_time }}</td>
             <td>{{ $ticket->show_date }}</td>
             <td>{{ $ticket->ticket_number }}</td>
-            <td> <a class="btn btn-primary" href="{{ route('user.invoice') }}">Invoice</a></td>
+            <td> <a class="btn btn-primary" href="{{ route('user.invoice', $ticket->id) }}">Invoice</a></td>
           </tr>
           @endforeach
         </tbody>
       </table>
     </div>
   </div>
-  <button type="button" class="btn btn-success m-3" onclick="printDiv('printableArea')">Download</button>
 </div>
 @endsection

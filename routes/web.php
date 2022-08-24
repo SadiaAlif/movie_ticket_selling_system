@@ -103,7 +103,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     })->name('user.dashboard');
 
     Route::get('/user/ticket_list', [UserController::class, 'ticket_list'])->name('user.ticket_list');
-    Route::get('/user/invoice', [UserController::class, 'invoice'])->name('user.invoice');
+    Route::get('/user/invoice/{id}', [UserController::class, 'invoice'])->name('user.invoice');
 });
 //user end
 

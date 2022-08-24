@@ -90,11 +90,14 @@
         .float-right{
             float: right;
         }
+        .btncol{
+            color: brown
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="container" id="printableArea">
         <div class="brand-section">
             <div class="row">
                 <div class="col-6">
@@ -102,9 +105,9 @@
                 </div>
                 <div class="col-6">
                     <div class="company-details">
-                        <p class="text-white">assdad asd  asda asdad a sd</p>
-                        <p class="text-white">assdad asd asd</p>
-                        <p class="text-white">+91 888555XXXX</p>
+                        <p class="text-white">company name dibi</p>
+                        <p class="text-white">adress dibi</p>
+                        <p class="text-white">+91 paykhana</p>
                     </div>
                 </div>
             </div>
@@ -113,16 +116,10 @@
         <div class="body-section">
             <div class="row">
                 <div class="col-6">
-                    <h2 class="heading"></h2>
-                    <p class="sub-heading">Tracking No. fabcart2025 </p>
-                    <p class="sub-heading">Order Date: 20-20-2021 </p>
-                    <p class="sub-heading">Email Address: customer@gfmail.com </p>
-                </div>
-                <div class="col-6">
-                    <p class="sub-heading">Full Name:  </p>
-                    <p class="sub-heading">Address:  </p>
-                    <p class="sub-heading">Phone Number:  </p>
-                    <p class="sub-heading">City,State,Pincode:  </p>
+                    <p class="sub-heading">Invoice id: {{ $invoice->id }}</p>
+                    <p class="sub-heading">Full Name:  {{ auth()->user()-> name }}</p>
+                    <p class="sub-heading">Date: {{ auth()->user()-> created_at }}</p>
+                    <p class="sub-heading">Email: {{ auth()->user()-> email}} </p>
                 </div>
             </div>
         </div>
@@ -133,9 +130,10 @@
             <table class="table-bordered">
                 <thead>
                     <tr>
-                        <th class="w-2">ID</th>
+                        <th>#</th>
                         <th class="w-20">Movie Name</th>
                         <th class="w-10">Price</th>
+                        <th class="w-10">Method</th>
                         <th class="w-10">Time</th>
                         <th class="w-10">Date</th>
                         <th class="w-10">Ticket Number</th>
@@ -143,28 +141,20 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Product Name</td>
-                        <td>10</td>
                         <td>1</td>
-                        <td>10</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" class="text-right">Sub Total</td>
-                        <td> 10.XX</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" class="text-right">Tax Total %1X</td>
-                        <td> 2</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" class="text-right">Grand Total</td>
-                        <td> 12.XX</td>
+                        <td>{{ $invoice->movie_name }}</td>
+                        <td>{{ $invoice->price }}</td>
+                        <td>{{ $invoice->method }}</td>
+                        <td>{{ $invoice->show_time }}</td>
+                        <td>{{ $invoice->show_date }}</td>
+                        <td>{{ $invoice->ticket_number }}</td>
                     </tr>
                 </tbody>
             </table>
             <br>
             <h3 class="heading">Payment Status: Paid</h3>
         </div>
+        <button type="button" class="float-right btncol m-3" onclick="printDiv('printableArea')">Download</button>
  </div>      
  <script>
     function printDiv(divName) {

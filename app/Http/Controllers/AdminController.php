@@ -43,7 +43,6 @@ class AdminController extends Controller
         return view('admin.contact_list', compact('contacts'));
     }
 
-    
 
 
 }
