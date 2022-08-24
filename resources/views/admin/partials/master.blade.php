@@ -178,7 +178,7 @@
               </a>
             </div> 
             <div class="col-12 col-sm-6">
-              <h3 class="header text">Welcome to Admin Dashboard.</h3>
+              <h3 class="header text">Welcome to Admin Panel</h3>
             </div>
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
