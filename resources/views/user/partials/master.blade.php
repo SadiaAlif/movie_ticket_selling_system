@@ -80,7 +80,7 @@
             <li class="menu-item active">
               <a href="{{route('user.dashboard')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home"></i>
-                <div data-i18n="Analytics" class="text-dark">Dashboard</div>
+                <div data-i18n="Analytics" class="text-dark">My Profile</div>
               </a>
             </li>
 
@@ -108,7 +108,7 @@
               </a>
             </div>
             <div class="col-12 col-sm-6">
-              <h3 class="header text-dark">Welcome To Your Profile.</h3>
+              <h3 class="header text-dark">Welcome to Your Panel</h3>
             </div>
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">

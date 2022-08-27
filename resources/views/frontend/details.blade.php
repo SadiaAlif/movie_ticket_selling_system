@@ -84,7 +84,7 @@
     </div>
     <!-- Breadcrumb End -->
 
-    <!-- Anime Section Begin -->
+    <!-- Movie Section Begin -->
     <section class="anime-details spad">
         <div class="container">
             <div class="anime__details__content">
@@ -106,17 +106,20 @@
                                         <li><span>Genre:</span> {{ $movie->category_name }}</li>
                                             <li><span>Booking Status:</span> 
                                                 @if ($movie->booking_status >0 )
-                                                    <strong class="text-success">Available</strong>
+                                                    <strong class="text-success" > {{ $movie->booking_status}} Available</strong>
                                                 @else
                                                     <strong class="text-warning">Unavailable</strong>
                                                 @endif
                                             </li>
+                                            <li><span>Show Time:</span> {{ $movie->show_time }} </li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
                                         <ul>
-                                            <li><span>Duration:</span> {{ $movie->duration }}</li>
+                                            <li><span>Duration:</span>{{ $movie->duration }}</li>
                                             <li><span>Price:</span> {{ $movie->price }} TK</li>
+                                            <li><span>Show Date:</span> {{ $movie->show_date }} </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -166,7 +169,7 @@
             </div>
         </div>
     </section>
-    <!-- Anime Section End -->
+    <!-- Movie Section End -->
 </div>
 </div><!-- Button trigger modal -->
 
@@ -179,7 +182,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle"> BOOK TICKET</h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle"> BOOK TICKETS</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -213,8 +216,6 @@
                     <option>Select Branch</option>
                     <option value="Uttara">Uttara</option>
                     <option value="Bashundhara">Bashundhara</option>
-                    <option value="Dhanmondi">Dhanmondi</option>
-                    <option value="Banani">Banani</option>
                 </select>
             </div>
             <input class="form-control" type="hidden" name="ticket_number" value="{{ uniqid() }}">
@@ -275,17 +276,6 @@
       </div>
   </footer>
   <!-- Footer Section End -->
-
-  <!-- Search model Begin -->
-  <div class="search-model">
-    <div class="h-100 d-flex align-items-center justify-content-center">
-        <div class="search-close-switch"><i class="icon_close"></i></div>
-        <form class="search-model-form">
-            <input type="text" id="search-input" placeholder="Search here.....">
-        </form>
-    </div>
-</div>
-<!-- Search model end -->
 
 <!-- Js Plugins -->
 <script src="{{ asset('frontend/js/jquery-3.3.1.min.js')}}"></script>

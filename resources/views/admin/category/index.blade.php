@@ -23,6 +23,7 @@
             <td>{{ $key+1 }}</td>
             <td>{{ $category->name }}</td>
             <td>
+              <a class="btn btn-primary " href="{{route('admin.category.edit', $category->id)}}" ><i class="fas fa-edit"></i> Edit</a>
               <a class="btn btn-danger" href="{{route('admin.category.delete',$category->id)}}" 
                 onclick="return confirm ('Are you sure?')"><i class="bx bx-trash me-1"></i> Delete</a>
             </td>

@@ -30,6 +30,24 @@ class CategoryController extends Controller
 
         return redirect()->route('admin.category.index');
     }
+    public function edit($id){
+        $categories= Category::get();
+        return view('admin.category.edit', compact('categories'));
+    }
+
+    public function update(Request $request, $id){
+        $validated = $request->validate([
+            'name' => 'required',
+            
+        ]);
+
+        $category->name = $request->name;
+       
+        $category->save();
+    
+        return redirect()->route('admin.category.index')->with('success', 'Successfully update category.');
+    }
+
 
     public function delete($id){
         $category = Category::find($id);

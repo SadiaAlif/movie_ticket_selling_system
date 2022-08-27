@@ -15,6 +15,9 @@ class Movie extends Model
         'description',
         'duration',
         'booking_status',
-        'price'
+        'price',
+        'show_time',
+        'show date',  
+        
     ];
 }

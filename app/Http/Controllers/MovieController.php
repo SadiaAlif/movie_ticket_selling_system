@@ -33,6 +33,9 @@ class MovieController extends Controller
             'duration' => 'required',
             'price' => 'required',
             'booking_status' => 'required',
+            'show_time' => 'required',
+            'show_date' => 'required'
+    
         ]);
         if($request->file('photo')){
             $photo = Storage::disk('public')->put('backend/img/movie', $request->file('photo'));
@@ -46,6 +49,9 @@ class MovieController extends Controller
             'duration' => $request->duration,
             'price' => $request->price,
             'booking_status' => $request->booking_status,
+            'show_time' => $request->show_time,
+            'show_date' => $request->show_date
+               
         ]);
 
         return redirect()->route('admin.movie.create')->with('success', 'Successfully add movie.');
@@ -66,6 +72,8 @@ class MovieController extends Controller
             'duration' => 'required',
             'price' => 'required',
             'booking_status' => 'required',
+            'show_time' => 'required',
+            'show_date' => 'required'
             
         ]);
 
@@ -84,6 +92,10 @@ class MovieController extends Controller
         $movie->duration = $request->duration;
         $movie->price = $request->price;
         $movie->booking_status = $request->booking_status;
+        $movie->show_time = $request->show_time;
+        $movie->show_date = $request->show_date;
+       
+
 
         $movie->save();
     

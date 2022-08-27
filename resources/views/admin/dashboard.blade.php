@@ -39,7 +39,7 @@
                   />
                 </div>
               </div>
-              <span class="text-dark"> Total Customers</span>
+              <span class="text-dark"> Total Users</span>
               <h3 class="card-title text-nowrap mb-1 text-dark">{{$total_users}}</h3>
               
             </div>
