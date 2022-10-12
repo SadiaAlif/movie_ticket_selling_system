@@ -8,7 +8,6 @@
 <div class="container-xxl flex-grow-1 container-p-y">
   <div class="card">
     <h5 class="card-header">All Movie</h5>
-    
     @if ($message = Session::get('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>{{ $message }}</strong>

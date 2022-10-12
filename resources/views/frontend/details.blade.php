@@ -298,6 +298,11 @@
 <script src="{{ asset('frontend/js/main.js')}}"></script>
 
 <script>
+  $( ".form-control" ).change(function(){
+   
+  });
+</script>
+<script>
     $("#calculate").click(function(){
         let movie_price = parseInt({{ $movie->price }});
         let qty = parseInt($("#qty").val());

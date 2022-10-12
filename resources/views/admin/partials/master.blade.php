@@ -89,18 +89,18 @@
              <li class="menu-item active">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-category text-dark "></i>
-                <div data-i18n="Layouts" class="text-dark">Category</div>
+                <div data-i18n="Layouts" class="text-dark">Genre</div>
               </a>
 
               <ul class="menu-sub">
                 <li class="menu-item active">
                   <a href="{{ route('admin.category.index') }}" class="menu-link">
-                    <div data-i18n="Without menu" class="text-dark">All Category</div>
+                    <div data-i18n="Without menu" class="text-dark">All Genre</div>
                   </a>
                 </li>
                 <li class="menu-item active">
                   <a href="{{ route('admin.category.create') }}" class="menu-link">
-                    <div data-i18n="Without navbar" class="text-dark">Add Category</div>
+                    <div data-i18n="Without navbar" class="text-dark">Add Genre</div>
                   </a>
                 </li>
               </ul>
@@ -125,7 +125,28 @@
                   </a>
                 </li>
               </ul>
-            </li>  
+            </li>
+          
+          <!-- Branch -->
+          <li class="menu-item active">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+              <i class="menu-icon tf-icons bx bx-film text-dark "></i>
+              <div data-i18n="Layouts" class="text-dark">Branch</div>
+            </a>
+
+            <ul class="menu-sub">
+              <li class="menu-item active">
+                <a href="{{ route('admin.branch.index') }}" class="menu-link">
+                  <div data-i18n="Without menu"class="text-dark">All Branch</div>
+                </a>
+              </li>
+              <li class="menu-item active">
+                <a href="{{ route('admin.branch.create') }}" class="menu-link">
+                  <div data-i18n="Without navbar"class="text-dark">Add Branch</div>
+                </a>
+              </li>
+            </ul>
+          </li>
           
            <!-- User -->
            <li class="menu-item active">

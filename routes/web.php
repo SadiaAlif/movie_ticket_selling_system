@@ -5,10 +5,13 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\BranchController;
 use App\Models\User;
 use App\Models\Movie;
 use App\Models\Category;
 use App\Models\TicketBook;
+use App\Models\Branch;
+
 
 
 /*
@@ -88,6 +91,14 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('/admin/movie/update/{id}', [MovieController::class, 'update'])->name('admin.movie.update');
     Route::get('/admin/movie/delete/{id}', [MovieController::class, 'delete'])->name('admin.movie.delete');
 
+    //branch
+     Route::get('/admin/branch/index', [BranchController::class, 'index'])->name('admin.branch.index');
+     Route::get('/admin/branch/create', [BranchController::class, 'create'])->name('admin.branch.create');
+     Route::post('/admin/branch/store', [BranchController::class, 'store'])->name('admin.branch.store');
+     Route::get('/admin/branch/edit/{id}', [BranchController::class, 'edit'])->name('admin.branch.edit');
+     Route::post('/admin/branch/update/{id}', [BranchController::class, 'update'])->name('admin.branch.update');
+     Route::get('/admin/branch/delete/{id}', [BranchController::class, 'delete'])->name('admin.branch.delete');
+ 
 
     Route::get('/admin/ticket_list', [AdminController::class, 'ticket_list'])->name('admin.ticket_list');
     Route::get('/admin/contact_list', [AdminController::class, 'contact_list'])->name('admin.contact_list');
