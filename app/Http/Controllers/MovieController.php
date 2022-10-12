@@ -97,7 +97,7 @@ class MovieController extends Controller
        
 
 
-        $movie->save();
+        $movie->update();
     
         return redirect()->route('admin.movie.index')->with('success', 'Successfully update movie.');
     }
@@ -130,6 +130,8 @@ class MovieController extends Controller
             'show_time' => 'required',
             'show_date' => 'required',
             'branch' => 'required',
+            'qty' => 'required',
+            
         ]);
         
 

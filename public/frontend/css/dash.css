@@ -9,17 +9,24 @@
 .moana{
     color: black;
 }
-
+/* admin */
 .side{
-    background-image: linear-gradient(45deg, rgba(38, 63, 77, 0.788) 0%, rgba(68, 135, 211, 0.863) 10%,rgb(47, 151, 212) 10%, rgb(40, 104, 141) 45%,rgba(16, 69, 167, 0.973) 45%, rgb(78, 73, 155) 70%,rgb(96, 43, 139) 70%, rgb(44, 25, 112) 81%,rgb(45, 54, 65) 81%, rgb(45, 47, 65) 88%,rgb(6, 25, 42) 88%, rgb(54, 65, 114) 100%);
+    background-image: linear-gradient(45deg, rgba(131, 120, 158, 0.952) 0%, rgba(73, 138, 212, 0.904) 10%,rgb(47, 151, 212) 10%, rgb(180, 179, 212) 45%,rgba(101, 90, 199, 0.973) 45%, rgb(78, 73, 155) 70%,rgb(126, 102, 172) 70%, rgb(117, 117, 163) 81%,rgb(110, 99, 126) 81%, rgb(114, 153, 179) 88%,rgb(119, 183, 221) 88%, rgb(156, 140, 182) 100%);
 }
 
 .text{
     color: #203c57;
 }
 
+/* login and reg cover */
 .card_h{
     background-image: url("../img/backgrounds/hall3.jpg");
     background-size: cover;
    }
+
+   /* //user */
+.sideber{
+
+ background-image: radial-gradient(circle at 28% 51%, rgba(171, 230, 227, 0.575) 0%, rgba(206, 206, 206,0.03) 17%,transparent 17%, transparent 100%),radial-gradient(circle at 45% 10%, rgba(10, 10, 10,0.03) 0%, rgba(10, 10, 10,0.03) 45%,transparent 45%, transparent 100%),radial-gradient(circle at 48% 44%, rgba(74, 74, 74,0.03) 0%, rgba(74, 74, 74,0.03) 84%,transparent 84%, transparent 100%),radial-gradient(circle at 47% 50%, rgba(186, 186, 186,0.03) 0%, rgba(186, 186, 186,0.03) 23%,transparent 23%, transparent 100%),radial-gradient(circle at 29% 70%, rgba(9, 9, 9,0.03) 0%, rgba(9, 9, 9,0.03) 32%,transparent 32%, transparent 100%),radial-gradient(circle at 2% 75%, rgba(179, 179, 179,0.03) 0%, rgba(179, 179, 179,0.03) 19%,transparent 19%, transparent 100%),radial-gradient(circle at 2% 36%, rgba(26, 26, 26,0.03) 0%, rgba(26, 26, 26,0.03) 1%,transparent 1%, transparent 100%),radial-gradient(circle at 53% 70%, rgba(90, 90, 90,0.03) 0%, rgba(90, 90, 90,0.03) 55%,transparent 55%, transparent 100%),radial-gradient(circle at 28% 92%, rgba(31, 31, 31,0.03) 0%, rgba(31, 31, 31,0.03) 35%,transparent 35%, transparent 100%),linear-gradient(90deg, rgb(76, 175, 233),rgb(255,255,255));
+}
 

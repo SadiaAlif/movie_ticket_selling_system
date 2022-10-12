@@ -61,9 +61,9 @@
       <div class="layout-container">
         <!-- Menu -->
 
-        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme sideber">
           <div class="app-brand demo">
-            <a href="{{route('user.dashboard')}}" class="app-brand-link">
+            <a href="{{route('user.dashboard')}}" class="app-brand-link ">
               <img src="{{ asset('frontend/img/logos/micon.png') }}" alt class="w-px-40 h-auto rounded-circle" />
               <span class="app-brand-text demo menu-text fw-bolder ms-2 text-uppercase text-dark">My Profile</span>
             </a>
@@ -75,18 +75,18 @@
 
           <div class="menu-inner-shadow"></div>
 
-          <ul class="menu-inner py-1">
+          <ul class="menu-inner py-1 sideber">
             <!-- Dashboard -->
             <li class="menu-item active">
               <a href="{{route('user.dashboard')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home"></i>
-                <div data-i18n="Analytics" class="text-dark">My Profile</div>
+                <i class="menu-icon tf-icons bx bx-home text-dark"></i>
+                <div data-i18n="Analytics" class="text fw-semibold d-block mb-1 text-dark">My Profile</div>
               </a>
             </li>
 
-            <li class="menu-item">
+            <li class="menu-item active">
               <a href="{{route('user.ticket_list')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-list-check"></i>
+                <i class="menu-icon tf-icons bx bx-list-check text dark"></i>
                 <div data-i18n="Analytics" class="text-dark" >Booked List</div>
               </a>
             </li>
@@ -100,7 +100,7 @@
           <!-- Navbar -->
 
           <nav
-            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme sideber"
             id="layout-navbar">
             <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
               <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
@@ -108,7 +108,7 @@
               </a>
             </div>
             <div class="col-12 col-sm-6">
-              <h3 class="header text-dark">Welcome to Your Panel</h3>
+              <h3 class="header text fw-semibold d-block mb-1 text-dark">Welcome </h3>
             </div>
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">

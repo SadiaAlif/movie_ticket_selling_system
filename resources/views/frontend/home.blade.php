@@ -96,13 +96,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/fan4.jpg')}}">
+                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/hawa.jpg')}}">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
-                                <div class="label">Action/Fantasy</div>
-                                <h2>Fantastic Four</h2>
-                                <p>Four astronauts gain extraordinary powers like invisibility and stretchability after being hit by cosmic radiation. ...</p>
+                                <div class="label">Drama//Mystery</div>
+                                <h2>Hawa</h2>
+                                <p>Hawa is a Bangladeshi mystery-drama film written and directed by Mejbaur Rahman Sumon...</p>
                             </div>
                         </div>
                     </div>

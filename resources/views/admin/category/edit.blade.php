@@ -8,7 +8,7 @@
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card mb-4">
         <div class="card-body  mt-3">
-          <form action="{{ route('admin.category.store') }}" method="POST" >
+          <form action="{{ route('admin.category.update', $category->id) }}" method="POST" >
             @csrf
             <div class="row mb-3">
               <label class="col-sm-2 col-form-label" for="basic-icon-default-fullname">Movie Type</label>
@@ -21,7 +21,8 @@
                     class="form-control"
                     id="basic-icon-default-fullname"
                     name="name"
-                    placeholder="name"
+                    placeholder="name"  
+                    value="{{ $category->name }}"      
                     aria-label=""
                     aria-describedby="basic-icon-default-fullname2"
                   />

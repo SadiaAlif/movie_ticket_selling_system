@@ -64,7 +64,7 @@
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme ">
           
           <div class="app-brand demo">
-            <a href="{{route('admin.dashboard')}}" class="app-brand-link">
+            <a href="{{route('admin.dashboard')}}" class="app-brand-link" >
               <img src="{{ asset('frontend/img/logos/ad.png') }}" alt class="w-px-40 h-auto rounded-circle" />
               <span class="app-brand-text demo menu-text fw-bolder ms-2 text-uppercase text-dark">Admin</span>
             </a>
@@ -74,34 +74,33 @@
             </a>
           </div>
         
-          <div class="menu-inner-shadow"></div>
-        
+          <div class="menu-inner-shadow "></div>
 
-          <ul class="menu-inner py-1">
+          <ul class="menu-inner py-1 ">
             <!-- Dashboard -->
             <li class="menu-item active">
               <a href="{{route('admin.dashboard')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home"></i>
-                <div data-i18n="Analytics">Dashboard</div>
+                <i class="menu-icon tf-icons bx bx-home text-dark "></i>
+                <div data-i18n="Analytics" class="text-dark" >Dashboard</div>
               </a>
             </li>
           
              <!-- Category -->
              <li class="menu-item active">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-category"></i>
-                <div data-i18n="Layouts">Category</div>
+                <i class="menu-icon tf-icons bx bx-category text-dark "></i>
+                <div data-i18n="Layouts" class="text-dark">Category</div>
               </a>
 
               <ul class="menu-sub">
                 <li class="menu-item active">
                   <a href="{{ route('admin.category.index') }}" class="menu-link">
-                    <div data-i18n="Without menu">All Category</div>
+                    <div data-i18n="Without menu" class="text-dark">All Category</div>
                   </a>
                 </li>
                 <li class="menu-item active">
                   <a href="{{ route('admin.category.create') }}" class="menu-link">
-                    <div data-i18n="Without navbar">Add Category</div>
+                    <div data-i18n="Without navbar" class="text-dark">Add Category</div>
                   </a>
                 </li>
               </ul>
@@ -110,19 +109,19 @@
              <!-- Movie -->
              <li class="menu-item active">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-film"></i>
-                <div data-i18n="Layouts">Movie</div>
+                <i class="menu-icon tf-icons bx bx-film text-dark "></i>
+                <div data-i18n="Layouts" class="text-dark">Movie</div>
               </a>
 
               <ul class="menu-sub">
                 <li class="menu-item active">
                   <a href="{{ route('admin.movie.index') }}" class="menu-link">
-                    <div data-i18n="Without menu">All Movie</div>
+                    <div data-i18n="Without menu"class="text-dark">All Movie</div>
                   </a>
                 </li>
                 <li class="menu-item active">
                   <a href="{{ route('admin.movie.create') }}" class="menu-link">
-                    <div data-i18n="Without navbar">Add Movie</div>
+                    <div data-i18n="Without navbar"class="text-dark">Add Movie</div>
                   </a>
                 </li>
               </ul>
@@ -131,14 +130,14 @@
            <!-- User -->
            <li class="menu-item active">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-              <i class="menu-icon tf-icons bx bx-user"></i>
-              <div data-i18n="Layouts"> User</div>
+              <i class="menu-icon tf-icons bx bx-user text-dark "></i>
+              <div data-i18n="Layouts" class="text-dark"> User</div>
             </a>
 
             <ul class="menu-sub">
               <li class="menu-item active">
                 <a href="{{ route('admin.user.list') }}" class="menu-link">
-                  <div data-i18n="Without menu">All User</div>
+                  <div data-i18n="Without menu" class="text-dark">All User</div>
                 </a>
               </li>
              
@@ -147,18 +146,18 @@
 
           <li class="menu-item active">
             <a href="{{route('admin.ticket_list')}}" class="menu-link">
-              <i class="menu-icon fa-solid fa-ticket"></i>
-              <div data-i18n="Analytics">Ticket Booked List</div>
+              <i class="menu-icon fa-solid fa-ticket text-dark "></i>
+              <div data-i18n="Analytics" class="text-dark">Ticket Booked List</div>
             </a>
           </li>
 
           <li class="menu-item active">
             <a href="{{route('admin.contact_list')}}" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-message"></i>
-              <div data-i18n="Analytics">Contact List</div>
+              <i class="menu-icon tf-icons bx bx-message text-dark "></i>
+              <div data-i18n="Analytics" class="text-dark">Contact List</div>
             </a>
           </li>
-
+          
             
           </ul>
         </aside>
@@ -170,15 +169,15 @@
           <!-- Navbar -->
 
           <nav
-            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme sideber"
             id="layout-navbar">
-            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none ">
               <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
                 <i class="bx bx-menu bx-sm"></i>
               </a>
             </div> 
             <div class="col-12 col-sm-6">
-              <h3 class="header text">Welcome to Admin Panel</h3>
+              <h3 class="header text fw-semibold d-block mb-1 text-dark">Welcome to Admin Panel</h3>
             </div>
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
@@ -186,8 +185,8 @@
               <ul class="navbar-nav flex-row align-items-center ms-auto">
 
                 <!-- Admin -->
-                <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                <li class="nav-item navbar-dropdown dropdown-user dropdown ">
+                  <a class="nav-link dropdown-toggle hide-arrow " href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
                       <img src="{{ asset('backend/img/avatars/ad.png') }}" alt class="w-px-40 h-auto rounded-circle" />
                     </div>

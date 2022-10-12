@@ -31,8 +31,9 @@ class CategoryController extends Controller
         return redirect()->route('admin.category.index');
     }
     public function edit($id){
-        $categories= Category::get();
-        return view('admin.category.edit', compact('categories'));
+        $category= Category::find($id);
+       
+        return view('admin.category.edit', compact('category'));
     }
 
     public function update(Request $request, $id){
@@ -41,9 +42,9 @@ class CategoryController extends Controller
             
         ]);
 
+        $category = Category::find($id);
         $category->name = $request->name;
-       
-        $category->save();
+        $category->update();
     
         return redirect()->route('admin.category.index')->with('success', 'Successfully update category.');
     }

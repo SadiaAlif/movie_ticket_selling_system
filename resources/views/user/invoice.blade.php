@@ -116,7 +116,7 @@
         <div class="body-section">
             <div class="row">
                 <div class="col-6">
-                    <p class="sub-heading">Invoice id: {{ $invoice->id }}</p>
+                    <p class="sub-heading">Invoice No: {{ $invoice->id }}</p>
                     <p class="sub-heading">Full Name:  {{ auth()->user()-> name }}</p>
                     <p class="sub-heading">Date: {{ auth()->user()-> created_at }}</p>
                     <p class="sub-heading">Email: {{ auth()->user()-> email}} </p>
@@ -133,6 +133,7 @@
                         <th>#</th>
                         <th class="w-20">Movie Name</th>
                         <th class="w-10">Price</th>
+                        <th class="w-10">Quantity</th>
                         <th class="w-10">Method</th>
                         <th class="w-10">Time</th>
                         <th class="w-10">Date</th>
@@ -142,9 +143,10 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td>
+                        <td>1</td> 
                         <td>{{ $invoice->movie_name }}</td>
                         <td>{{ $invoice->price }}</td>
+                        <td>{{ $invoice->qty }}</td>
                         <td>{{ $invoice->method }}</td>
                         <td>{{ $invoice->show_time }}</td>
                         <td>{{ $invoice->show_date }}</td>

@@ -9,6 +9,16 @@
     <div class="card mb-4">
         <div class="card-body  mt-3">
           
+          @if ($errors->any())
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <ul>
+                  @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+      @endif
           <form action="{{ route('admin.movie.update', $movie->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             
@@ -159,6 +169,7 @@
                     id="basic-icon-default-fullname"
                     name="show_time"
                     placeholder=" show time"
+                    value="{{ $movie->show_time }}"
                     aria-label=""
                     aria-describedby="basic-icon-default-fullname2"
                   />
@@ -172,7 +183,7 @@
                 <div class="input-group input-group-merge">
                   <span id="basic-icon-default-fullname2" class="input-group-text"
                     ><i class='bx bx-category' ></i></span>
-                    <input class="form-control" type="date" name="show_date" placeholder="Transaction ID">
+                    <input class="form-control" type="date" name="show_date" placeholder="Transaction ID"  value="{{ $movie->show_date }}"   >
                     
                 </div>
               </div>

@@ -103,7 +103,7 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
                                         <ul>
-                                        <li><span>Genre:</span> {{ $movie->category_name }}</li>
+                                        <li><span>Category:</span> {{ $movie->category_name }}</li>
                                             <li><span>Booking Status:</span> 
                                                 @if ($movie->booking_status >0 )
                                                     <strong class="text-success" > {{ $movie->booking_status}} Available</strong>
@@ -190,12 +190,14 @@
       <div class="modal-body">
         <div class="row">
             <div class="col-md-6 mb-2">
+                
                 <select class="form-control" name="method">
                     <option>Payment Method</option>
                     <option value="bKash">bKash</option>
                     <option value="Nagad">Nagad</option>
                 </select>
             </div>
+            <small>(Bkash-01902404958 , Nagad-01693663899)</small>
             <div class="col-md-6 mb-2">
                 <input class="form-control" type="text" name="tnx_id" placeholder="Transaction ID">
             </div>
@@ -203,9 +205,9 @@
                 <select class="form-control" name="show_time">
                     <option>Show Time</option>
                     <option value="9:00 AM">9:00 AM</option>
-                    <option value="12:00 PM">12:00 PM</option>
-                    <option value="4:00 PM">4:00 PM</option>
-                    <option value="7:00 PM">8:00 PM</option>
+                    <option value="12:00 PM">01:00 PM</option>
+                    <option value="4:00 PM">05:00 PM</option>
+                    <option value="7:00 PM">09:00 PM</option>
                 </select>
             </div>
             <div class="col-md-6">
@@ -215,9 +217,17 @@
                 <select class="form-control" name="branch">
                     <option>Select Branch</option>
                     <option value="Uttara">Uttara</option>
-                    <option value="Bashundhara">Bashundhara</option>
+                    <option value="Bashundhara">Dhanmondi</option>
                 </select>
             </div>
+            <div class="col-md-6 mb-2">
+                <input class="form-control" type="number" name="qty" id="qty" min="1" placeholder="Ticket quantity">
+            </div>
+            <div class="col-md-6 mt-2">
+                <input class="form-control" id="price" type="text" readonly name="price"  placeholder="Total price"> 
+                <button type="button" id="calculate" class="btn btn-primary btn-small">Calculate</button>
+            </div>
+            
             <input class="form-control" type="hidden" name="ticket_number" value="{{ uniqid() }}">
             @auth
             <input class="form-control" type="hidden" name="movie_id" value="{{ $movie->id }}">
@@ -225,7 +235,7 @@
             <input class="form-control" type="hidden" name="user_id" value="{{ auth()->user()->id }}">
             <input class="form-control" type="hidden" name="user_name" value="{{ auth()->user()->name }}">
             @endauth
-            <input class="form-control" type="hidden" name="price" value="{{ $movie->price }}">
+            
         </div>
       </div>
       
@@ -287,7 +297,16 @@
 <script src="{{ asset('frontend/js/owl.carousel.min.js')}}"></script>
 <script src="{{ asset('frontend/js/main.js')}}"></script>
 
+<script>
+    $("#calculate").click(function(){
+        let movie_price = parseInt({{ $movie->price }});
+        let qty = parseInt($("#qty").val());
 
+        if(!isNaN(qty)){
+            $("#price").val(movie_price*qty);
+        }
+    });
+</script>
 </body>
 
 </html>

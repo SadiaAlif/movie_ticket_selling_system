@@ -16,8 +16,9 @@
             <th>#</th>
             <th>Movie Name</th>
             <th>Price</th>
-            <th>Time</th>
-            <th>Date</th>
+            <th>Quantity</th>
+            <th>Show Time</th>
+            <th>Show Date</th>
             <th>Branch</th>
             <th>Ticket Number</th>
             <th>Action</th>
@@ -29,6 +30,7 @@
             <td>{{ $key+1 }}</td>
             <td>{{ $ticket->movie_name }}</td>
             <td>{{ $ticket->price }}</td>
+            <td>{{ $ticket->qty }}</td>
             <td>{{ $ticket->show_time }}</td>
             <td>{{ $ticket->show_date }}</td>
             <td>{{ $ticket->branch }}</td>

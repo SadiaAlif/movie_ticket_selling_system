@@ -19,6 +19,7 @@ class TicketBook extends Model
         'tnx_id',
         'show_time',
         'show_date',
-        'branch'
+        'branch',
+        'qty'
     ];
 }
