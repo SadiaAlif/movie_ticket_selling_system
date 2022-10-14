@@ -13,10 +13,15 @@ class MovieController extends Controller
 {
     
     public function index(Request $request){
-
+        $search= $request['search']??"";
+        if($search !=""){
+            $movies= Movie::where('name','LIKE',"%$search%")
+            -> orWhere('category_name','LIKE', "%$search%")->get();
+        }
+        else{
         $movies = Movie::get();
-
-        return view('admin.movie.index', compact('movies'));
+        }
+        return view('admin.movie.index', compact('movies','search'));
     }
 
     public function create(Request $request){

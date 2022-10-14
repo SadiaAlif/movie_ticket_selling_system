@@ -5,9 +5,13 @@
 @endsection
 
 @section('page-content')
-<div class="container-xxl flex-grow-1 container-p-y">
+<div class="container-xxl flex-grow-1 container-p-y" id="printableArea">
   <div class="card">
     <h5 class="card-header">All Movie</h5>
+    <form action="">
+      <input type="search" name="search" id="" placeholder="Search by movie name" value="{{ $search }}">
+      <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+</form>
     @if ($message = Session::get('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>{{ $message }}</strong>
@@ -33,7 +37,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>Photo</th>
-            <th>Category_Name</th>
+            <th>Genre</th>
             <th>Price</th>
             <th>Duration</th>
             <th>Status</th>
@@ -67,5 +71,18 @@
       </table>
     </div>
   </div>
+  <button type="button" class="float-right btncol m-3" onclick="printDiv('printableArea')">Download</button>
 </div>
+<script>
+  function printDiv(divName) {
+      var printContents = document.getElementById(divName).innerHTML;
+      var originalContents = document.body.innerHTML;
+
+      document.body.innerHTML = printContents;
+
+      window.print();
+
+      document.body.innerHTML = originalContents;
+  }
+</script>
 @endsection
