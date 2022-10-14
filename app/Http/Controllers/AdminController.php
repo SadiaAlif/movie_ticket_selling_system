@@ -17,7 +17,8 @@ class AdminController extends Controller
     public function user_list(Request $request){
         $search= $request['search']??"";
         if($search !=""){
-            $users= User::where('role', '2')->where('name', 'LIKE',"%$search%")->get();
+            $users= User::where('role', '2')->where('name', 'LIKE',"%$search%")
+            -> orWhere('email','LIKE', "%$search%")->get();
             
         }
         else{
@@ -42,7 +43,8 @@ class AdminController extends Controller
     public function ticket_list(Request $request){
         $search= $request['search']??"";
         if($search !=""){
-            $tickets= TicketBook::where('user_name','LIKE',"%$search%")->get();
+            $tickets= TicketBook::where('user_name','LIKE',"%$search%")
+            -> orWhere('movie_name','LIKE', "%$search%")->get();
         }
         
         else{
@@ -52,8 +54,15 @@ class AdminController extends Controller
     }
 //Adash contactlist
     public function contact_list(Request $request){
+        $search= $request['search']??"";
+        if($search !=""){
+            $contacts= Contact::where('name','LIKE',"%$search%")
+            -> orWhere('email','LIKE', "%$search%")->get();
+        }
+        else{
         $contacts = Contact::get();
-        return view('admin.contact_list', compact('contacts'));
+        }
+        return view('admin.contact_list', compact('contacts','search'));
     }
 
 

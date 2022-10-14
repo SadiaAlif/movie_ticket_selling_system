@@ -5,10 +5,13 @@
 @endsection
 
 @section('page-content')
-<div class="container-xxl flex-grow-1 container-p-y">
+<div class="container-xxl flex-grow-1 container-p-y" id="printableArea">
   <div class="card">
     <h5 class="card-header">All Contact</h5>
-
+    <form action="">
+      <input type="search" name="search" id="" placeholder="Search by user name" value="{{ $search }}">
+      <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+</form>
     <div class="table-responsive text-nowrap">
       <table class="table table-striped">
         <thead>
@@ -36,5 +39,18 @@
       </table>
     </div>
   </div>
+  <button type="button" class="float-right btncol m-3" onclick="printDiv('printableArea')">Download</button>
 </div>
+<script>
+  function printDiv(divName) {
+      var printContents = document.getElementById(divName).innerHTML;
+      var originalContents = document.body.innerHTML;
+
+      document.body.innerHTML = printContents;
+
+      window.print();
+
+      document.body.innerHTML = originalContents;
+  }
+</script>
 @endsection
