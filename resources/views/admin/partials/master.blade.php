@@ -130,7 +130,7 @@
           <!-- Branch -->
           <li class="menu-item active">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-              <i class="menu-icon tf-icons bx bx-film text-dark "></i>
+              <i class="menu-icon fa-solid fa-video text-dark "></i>
               <div data-i18n="Layouts" class="text-dark">Branch</div>
             </a>
 
