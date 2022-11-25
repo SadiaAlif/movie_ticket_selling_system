@@ -34,6 +34,7 @@ class MovieController extends Controller
             'name' => 'required',
             'photo' => 'required',
             'category_name' => 'required',
+            'branch_name' => 'required',
             'description' => 'required',
             'duration' => 'required',
             'price' => 'required',
@@ -50,6 +51,7 @@ class MovieController extends Controller
             'name' => $request->name,
             'photo' => $photo,
             'category_name' => $request->category_name,
+            'branch_name' => $request->branch_name,
             'description' => $request->description,
             'duration' => $request->duration,
             'price' => $request->price,
@@ -73,6 +75,7 @@ class MovieController extends Controller
             'name' => 'required',
             'photo' => 'nullable',
             'category_name' => 'required',
+            'branch_name' => 'required',
             'description' => 'required',
             'duration' => 'required',
             'price' => 'required',
@@ -93,6 +96,7 @@ class MovieController extends Controller
         $movie->name = $request->name;
         $movie->photo = $photo;
         $movie->category_name = $request->category_name;
+        $movie->branch_name = $request->branch_name;
         $movie->description = $request->description;
         $movie->duration = $request->duration;
         $movie->price = $request->price;

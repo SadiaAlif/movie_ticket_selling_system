@@ -83,6 +83,24 @@
                 </div>
               </div>
             </div>
+
+            <div class="row mb-3">
+              <label class="col-sm-2 col-form-label" for="basic-icon-default-fullname">Branch</label>
+              <div class="col-sm-10">
+                <div class="input-group input-group-merge">
+                  <span id="basic-icon-default-fullname2" class="input-group-text"
+                    ><i class='bx bx-category' ></i></span>
+                  <select class="form-select" name="branch_name" aria-label="Default select example">
+                    <option selected>Select Branch</option>
+                    @foreach ($categories as $item)
+                    <option value="{{ $item->name }}">{{ $item->name }}</option>
+                    @endforeach
+                    
+                  </select>
+                    
+                </div>
+              </div>
+            </div>
             <div class="row mb-3">
               <label class="col-sm-2 col-form-label" for="basic-icon-default-fullname">Movies Description</label>
               <div class="col-sm-10">
@@ -178,7 +196,7 @@
                 <div class="input-group input-group-merge">
                   <span id="basic-icon-default-fullname2" class="input-group-text"
                     ><i class='bx bx-category' ></i></span>
-                    <input class="form-control" type="date" name="show_date" placeholder="Transaction ID">
+                    <input class="form-control" type="date" name="show_date" placeholder="show date">
                     
                 </div>
               </div>

@@ -17,6 +17,7 @@
                   <span id="basic-icon-default-fullname2" class="input-group-text"
                     ><i class='bx bx-category' ></i></span>
                   <input
+                    value="{{ $branch->name }}"
                     type="text"
                     class="form-control"
                     id="basic-icon-default-fullname"

@@ -106,28 +106,7 @@
               </ul>
             </li> 
 
-             <!-- Movie -->
-             <li class="menu-item active">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-film text-dark "></i>
-                <div data-i18n="Layouts" class="text-dark">Movie</div>
-              </a>
-
-              <ul class="menu-sub">
-                <li class="menu-item active">
-                  <a href="{{ route('admin.movie.index') }}" class="menu-link">
-                    <div data-i18n="Without menu"class="text-dark">All Movie</div>
-                  </a>
-                </li>
-                <li class="menu-item active">
-                  <a href="{{ route('admin.movie.create') }}" class="menu-link">
-                    <div data-i18n="Without navbar"class="text-dark">Add Movie</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-          
-          <!-- Branch -->
+              <!-- Branch -->
           <li class="menu-item active">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
               <i class="menu-icon fa-solid fa-video text-dark "></i>
@@ -147,6 +126,27 @@
               </li>
             </ul>
           </li>
+          
+             <!-- Movie -->
+             <li class="menu-item active">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-film text-dark "></i>
+                <div data-i18n="Layouts" class="text-dark">Movie</div>
+              </a>
+
+              <ul class="menu-sub">
+                <li class="menu-item active">
+                  <a href="{{ route('admin.movie.index') }}" class="menu-link">
+                    <div data-i18n="Without menu"class="text-dark">All Movie</div>
+                  </a>
+                </li>
+                <li class="menu-item active">
+                  <a href="{{ route('admin.movie.create') }}" class="menu-link">
+                    <div data-i18n="Without navbar"class="text-dark">Add Movie</div>
+                  </a>
+                </li>
+              </ul>
+            </li>  
           
            <!-- User -->
            <li class="menu-item active">

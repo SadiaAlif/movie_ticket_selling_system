@@ -12,6 +12,7 @@ class Movie extends Model
         'name',
         'photo',
         'category_name',
+        'branch_name',
         'description',
         'duration',
         'booking_status',
