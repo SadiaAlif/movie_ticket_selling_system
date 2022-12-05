@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Movie;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Contact;
@@ -10,6 +12,28 @@ use App\Models\TicketBook;
 
 class AdminController extends Controller
 {
+    public function dashboard()
+    {
+        $total_users = User::where('role', '2')->count();
+
+        $movies = Movie::get();
+        $total_movie = $movies->count();
+
+        $sells = TicketBook::groupBy('show_date')->selectRaw('SUM(price) as amount,show_date')->whereMonth('show_date',date('m'))->whereYear('show_date',date('Y'))->get();
+
+        $chart_data[] = ['Date', 'Amount'];
+
+        foreach ($sells as $sell) {
+            $chart_data[] = [$sell->show_date, $sell->amount];
+        }
+
+        $total_sell = TicketBook::count();
+
+        $total_amount = TicketBook::sum('price');
+
+        return view('admin.dashboard', compact('total_users', 'total_movie', 'total_sell', 'total_amount','chart_data'));
+    }
+
     public function profile(Request $request) {
         return view ('admin.profile');
     }

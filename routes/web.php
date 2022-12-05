@@ -6,30 +6,17 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\BranchController;
-use App\Models\User;
 use App\Models\Movie;
 use App\Models\Category;
-use App\Models\TicketBook;
-use App\Models\Branch;
-
-
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
 
-    $movies = Movie::latest()->take(6)->get();
+    $data = [
+        'movies'            => Movie::latest()->take(6)->get(),
+        'popular_movies'    => Movie::withSum('bookedTickets', 'qty')->orderBy('booked_tickets_sum_qty','desc')->take(6)->get(),
+    ];
 
-    return view('frontend.home', compact('movies'));
+    return view('frontend.home', $data);
 })->name('home');
 
 //movie start
@@ -59,19 +46,7 @@ Route::post('/contact', [AdminController::class, 'contact'])->name('admin.contac
 //admin start
 Route::middleware(['auth', 'admin'])->group(function () {
     
-    Route::get('/admin/dashboard', function () {
-        $total_users = User::where('role', '2')->count();
-
-        $movies = Movie::get();
-        $total_movie = $movies->count();
-
-        $sells = TicketBook::get();
-        $total_sell = $sells->count();
-
-        $total_amount = TicketBook::sum('price');
-        
-        return view('admin.dashboard', compact('total_users', 'total_movie', 'total_sell', 'total_amount'));
-    })->name('admin.dashboard');
+    Route::get('/admin/dashboard',[AdminController::class,'dashboard'])->name('admin.dashboard');
 
     Route::get('/admin/profile', [AdminController::class, 'profile'])->middleware(['auth'])->name('admin.profile');
  
@@ -120,7 +95,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 //user end
 
 
-
+Route::post('movie_times', [MovieController::class, 'movieTimes'])->name('movie_times');
 
 
 require __DIR__.'/auth.php';

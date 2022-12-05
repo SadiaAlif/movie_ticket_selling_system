@@ -5,26 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TicketBook extends Model
+class MovieTime extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'ticket_number',
         'movie_id',
-        'movie_name',
-        'user_id',
-        'user_name',
-        'price',
-        'method',
-        'tnx_id',
-        'show_time',
-        'show_date',
-        'branch',
-        'qty'
+        'movie_date_id',
+        'start_time',
+        'end_time'
     ];
 
     public function movie(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Movie::class);
+    }
+
+    public function movieDate(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(MovieDate::class);
     }
 }

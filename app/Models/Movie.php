@@ -18,7 +18,21 @@ class Movie extends Model
         'booking_status',
         'price',
         'show_time',
-        'show_date',  
-        
+        'show_date',
     ];
+
+    public function bookedTickets(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(TicketBook::class);
+    }
+
+    public function movieDates(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(MovieDate::class);
+    }
+
+    public function movieTimes(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(MovieTime::class);
+    }
 }

@@ -12,7 +12,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+          rel="stylesheet">
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('frontend/css/font-awesome.min.css')}}" type="text/css">
@@ -26,118 +26,102 @@
 </head>
 
 <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Header Section Begin -->
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="header__logo">
+                    <a href="{{route('home')}}">
+                        <img src="{{ asset('frontend/img/logos/home2.png')}}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="header__nav">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li><a href="{{route('home')}}">Home</a></li>
+                            <li><a href="{{route('movies')}}">All movie</a></li>
+                            <li><a href="{{route('contact')}}">Contact Us</a></li>
+                            @if (isset(auth()->user()->id))
+                                @if(auth()->user()->role == '1')
+                                    <li><a href="{{route('admin.dashboard')}}" class="btn btn-primary btn-sm  m-3">Dashboard</a>
+                                    </li>
+                                @else
+                                    <li><a href="{{route('user.dashboard')}}" class="btn btn-primary btn-sm  m-3">Dashboard</a>
+                                    </li>
+                                @endif
+                                <li><a href="{{route('logout')}}"
+                                       class="btn btn-warning btn-sm  m-3 text-dark">Logout</a></li>
+                            @else
+                                <li><a href="{{route('login')}}" class="btn btn-primary btn-sm  m-3">Login</a></li>
+                                <li><a href="{{route('register')}}" class="btn btn-primary btn-sm">Register</a></li>
+                            @endif
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
     </div>
+</header>
+<!-- Header End -->
 
-    <!-- Header Section Begin -->
-    <header class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2">
-                    <div class="header__logo">
-                        <a href="{{route('home')}}">
-                            <img src="{{ asset('frontend/img/logos/home2.png')}}" alt="">
-                        </a>
+<!-- Hero Section Begin -->
+<section class="hero">
+    <div class="container">
+        <div class="hero__slider owl-carousel">
+            @foreach($popular_movies as $movie)
+                <div class="hero__items set-bg" data-setbg="/storage/{{ $movie->photo }}">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="hero__text">
+                                <div class="label">{{ $movie->branch_name }}</div>
+                                <h2>{{ $movie->name }}</h2>
+                                <p>{{ substr($movie->description,0,100) }}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-8">
-                    <div class="header__nav">
-                        <nav class="header__menu mobile-menu">
-                                    <ul>
-                                        <li><a href="{{route('home')}}">Home</a></li>
-                                        <li><a href="{{route('movies')}}">All movie</a></li>
-                                        <li><a href="{{route('contact')}}">Contact Us</a></li>
-                                        @if (isset(auth()->user()->id))
-                                            @if(auth()->user()->role == '1')
-                                            <li><a href="{{route('admin.dashboard')}}" class="btn btn-primary btn-sm  m-3">Dashboard</a></li>
-                                            @else
-                                            <li><a href="{{route('user.dashboard')}}" class="btn btn-primary btn-sm  m-3">Dashboard</a></li>
-                                            @endif
-                                            <li><a href="{{route('logout')}}" class="btn btn-warning btn-sm  m-3 text-dark">Logout</a></li>
-                                        @else
-                                        <li><a href="{{route('login')}}" class="btn btn-primary btn-sm  m-3">Login</a></li>
-                                        <li><a href="{{route('register')}}" class="btn btn-primary btn-sm">Register</a></li>
-                                        @endif                                      
-                                    </ul>                          
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <div id="mobile-menu-wrap"></div>
+            @endforeach
         </div>
-    </header>
-    <!-- Header End -->
+    </div>
+</section>
+<!-- Hero Section End -->
 
-    <!-- Hero Section Begin -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero__slider owl-carousel">
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/spider.jpg')}}">
+<!-- Product Section Begin -->
+<section class="product spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="trending__product">
                     <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <div class="label">Action/Adventure</div>
-                                <h2>Spider-Man: No Way Home</h2>
-                                <p>Peter Parker seeks Doctor Strange's help to make people forget about Spiderman's identity</p>
+                        <div class="col-lg-8 col-md-8 col-sm-8">
+                            <div class="section-title">
+                                <h4>Now Showing</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="btn__all">
+                                <a href="{{ route('movies') }}" class="primary-btn">View All <span
+                                            class="arrow_right"></span></a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/moana.jpg')}}">
                     <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <div class="label">Family/Adventure </div>
-                                <h2 class="text-dark">Moana Sing-Along</h2>
-                                <p class="text-dark">Moana, daughter of chief Tui, embarks on a journey to return the heart...</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/hawa.jpg')}}">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <div class="label">Drama//Mystery</div>
-                                <h2>Hawa</h2>
-                                <p>Hawa is a Bangladeshi mystery-drama film written and directed by Mejbaur Rahman Sumon...</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Hero Section End -->
 
-    <!-- Product Section Begin -->
-    <section class="product spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="trending__product">
-                        <div class="row">
-                            <div class="col-lg-8 col-md-8 col-sm-8">
-                                <div class="section-title">
-                                    <h4>Now Showing</h4>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <div class="btn__all">
-                                    <a href="{{ route('movies') }}" class="primary-btn">View All <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-
-                            @foreach ($movies as $item)
+                        @foreach ($movies as $item)
 
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
                                     <div class="product__item__pic set-bg" data-setbg="/storage/{{ $item->photo }}">
-                                        
+
                                     </div>
                                     <div class="product__item__text">
                                         <ul>
@@ -147,18 +131,18 @@
                                     </div>
                                 </div>
                             </div>
-                                
-                            @endforeach
 
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
+            </div>
         </div>
     </div>
-</div>
-</div>
-</div>
-</div>
+    </div>
+    </div>
+    </div>
+    </div>
 </section>
 <!-- Product Section End -->
 
@@ -185,17 +169,18 @@
             </div>
             <div class="col-lg-3">
                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This is made by Sadia Alif </a>
-                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                    All rights reserved | This is made by Sadia Alif </a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 
-              </div>
-          </div>
-      </div>
-  </footer>
-  <!-- Footer Section End -->
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Section End -->
 
-  <!-- Search model Begin -->
-  <div class="search-model">
+<!-- Search model Begin -->
+<div class="search-model">
     <div class="h-100 d-flex align-items-center justify-content-center">
         <div class="search-close-switch"><i class="icon_close"></i></div>
         <form class="search-model-form">

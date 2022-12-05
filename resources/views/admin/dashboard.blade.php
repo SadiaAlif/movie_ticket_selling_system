@@ -80,10 +80,32 @@
             </div>
           </div>
         </div>
-        
+        <div class="col-lg-12">
+          <div id="chart_div" style="height: 500px;"></div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 @endsection
+@push('js')
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script>
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+    google.charts.setOnLoadCallback(drawStacked);
 
+    let chart_data = @json($chart_data);
+
+    function drawStacked() {
+      var data = google.visualization.arrayToDataTable(chart_data);
+
+      var options = {
+        bars: 'vertical', // Required for Material Bar Charts.
+        is3D: true,
+        colors:['#6610f2'],
+      };
+      var chart = new google.charts.Bar(document.getElementById('chart_div'));
+      chart.draw(data, google.charts.Bar.convertOptions(options));
+    }
+  </script>
+@endpush
