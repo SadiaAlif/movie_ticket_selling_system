@@ -35,4 +35,14 @@ class Movie extends Model
     {
         return $this->hasMany(MovieTime::class);
     }
+    
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    public function getAvgRatingAttribute()
+    {
+        return $this->reviews()->avg('rating');
+    }
 }

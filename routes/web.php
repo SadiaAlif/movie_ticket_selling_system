@@ -6,11 +6,12 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\BranchController;
+use App\Http\Controllers\ReviewController;
 use App\Models\Movie;
+use App\Models\Review;
 use App\Models\Category;
 
 Route::get('/', function () {
-
     $data = [
         'movies'            => Movie::latest()->take(6)->get(),
         'popular_movies'    => Movie::withSum('bookedTickets', 'qty')->orderBy('booked_tickets_sum_qty','desc')->take(6)->get(),
@@ -41,6 +42,8 @@ Route::get('/details/{id}', [MovieController::class, 'details'])->name('details'
 Route::post('/buy_ticket', [MovieController::class, 'buy_ticket'])->name('buy_ticket');
 Route::post('/contact', [AdminController::class, 'contact'])->name('admin.contact');
 
+//review
+Route::post('review-store', [\App\Http\Controllers\ReviewController::class, 'store'])->name('review.store');
 
 
 //admin start

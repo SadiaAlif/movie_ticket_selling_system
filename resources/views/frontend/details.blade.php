@@ -22,6 +22,11 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/owl.carousel.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('frontend/css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css')}}" type="text/css">
+    <style>
+        .white_txt{
+            color : white !important
+        }
+    </style>
 </head>
 
 <body>
@@ -106,7 +111,7 @@
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <ul>
-                                        <li><span>Category:</span> {{ $movie->category_name }}</li>
+                                        <li><span>Genre:</span> {{ $movie->category_name }}</li>
                                         <li><span>Booking Status:</span>
                                             @if ($movie->booking_status >0 )
                                                 <strong class="text-success"> {{ $movie->booking_status}}
@@ -182,7 +187,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle"> BOOK TICKETS</h5>
+                    <h5 class="modal-title" id="exampleModalCenterTitle"> BUY TICKETS</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -252,14 +257,62 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success">BOOK NOW</button>
+                    <button type="submit" class="btn btn-success">BUY NOW</button>
                 </div>
             </div>
         </div>
     </div>
 
 </form>
-
+<table>
+    @foreach($movie->reviews as $review)
+        <tr>
+            
+            <td width="80%" class="white_txt">
+                <p class="mb-0 white_txt">{{ $review->user->name }}</p>
+                <div data-rate="{{ $review->rating }}" class="all_ratings white_txt"
+                     id="rateYo_{{ $review->id }}"></div>
+                <p class="white_txt">{{ $review->comment }}</p>
+            </td>
+        </tr>
+    @endforeach
+</table>
+<div class="row mt-3 justify-content-center">
+    <div class="col-lg-6">
+        <h4 class="about_us white_txt">Write Your Feedback</h4>
+        <form action="{{ route('review.store') }}" method="post">@csrf
+            <input type="hidden" name="movie_id" value="{{ $movie->id }}">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="rate">
+                        <input type="radio" id="star5" name="rate" value="5"/>
+                        <label for="star5" title="text" class="white_txt">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4"/>
+                        <label for="star4" title="text" class="white_txt">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3"/>
+                        <label for="star3" title="text" class="white_txt">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2"/>
+                        <label for="star2" title="text" class="white_txt">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1"/>
+                        <label for="star1" title="text" class="white_txt">1 star</label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="about_us white_txt" for="exampleInputEmail1">Feedback</label>
+                        <textarea name="comment" id="comment" cols="30" rows="5"
+                                  class="form-control" required></textarea>
+                        <span class="text-danger">{{ $errors->first('comment') }}</span>
+                    </div>
+                </div>
+                <div class="col-lg-12" style="margin-bottom : 50px">
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-danger">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 <!-- Footer Section Begin -->
 <footer class="footer">
     <div class="page-up">
