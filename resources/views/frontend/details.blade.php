@@ -23,8 +23,8 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css')}}" type="text/css">
     <style>
-        .white_txt{
-            color : white !important
+        .white_txt {
+            color: white !important
         }
     </style>
 </head>
@@ -127,6 +127,7 @@
                                     <ul>
                                         <li><span>Duration:</span>{{ $movie->duration }}</li>
                                         <li><span>Price:</span> {{ $movie->price }} TK</li>
+                                        <li ><span>Rating:</span> {{ $movie->avg_rating }} <i class="fa fa-star" style="color: orange"></i></li>
                                     </ul>
                                 </div>
                             </div>
@@ -176,10 +177,7 @@
         </div>
     </div>
 </section>
-
-
 <!-- Modal -->
-
 <form action="{{ route('buy_ticket') }}" method="POST">
     @csrf
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
@@ -233,7 +231,8 @@
                             <input class="form-control" type="hidden" name="movie_name" value="{{ $movie->name }}">
                             <input class="form-control" type="hidden" name="branch" value="{{ $movie->branch_name }}">
                             <input class="form-control" type="hidden" name="user_id" value="{{ auth()->id() }}">
-                            <input class="form-control" type="hidden" name="user_name" value="{{ auth()->user()->name }}">
+                            <input class="form-control" type="hidden" name="user_name"
+                                   value="{{ auth()->user()->name }}">
                         @endauth
                     </div>
                     <div class="row mt-2 text-right">
@@ -262,57 +261,67 @@
             </div>
         </div>
     </div>
-
 </form>
-<table>
-    @foreach($movie->reviews as $review)
-        <tr>
-            
-            <td width="80%" class="white_txt">
-                <p class="mb-0 white_txt">{{ $review->user->name }}</p>
-                <div data-rate="{{ $review->rating }}" class="all_ratings white_txt"
-                     id="rateYo_{{ $review->id }}"></div>
-                <p class="white_txt">{{ $review->comment }}</p>
-            </td>
-        </tr>
-    @endforeach
-</table>
-<div class="row mt-3 justify-content-center">
-    <div class="col-lg-6">
-        <h4 class="about_us white_txt">Write Your Feedback</h4>
-        <form action="{{ route('review.store') }}" method="post">@csrf
-            <input type="hidden" name="movie_id" value="{{ $movie->id }}">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="rate">
-                        <input type="radio" id="star5" name="rate" value="5"/>
-                        <label for="star5" title="text" class="white_txt">5 stars</label>
-                        <input type="radio" id="star4" name="rate" value="4"/>
-                        <label for="star4" title="text" class="white_txt">4 stars</label>
-                        <input type="radio" id="star3" name="rate" value="3"/>
-                        <label for="star3" title="text" class="white_txt">3 stars</label>
-                        <input type="radio" id="star2" name="rate" value="2"/>
-                        <label for="star2" title="text" class="white_txt">2 stars</label>
-                        <input type="radio" id="star1" name="rate" value="1"/>
-                        <label for="star1" title="text" class="white_txt">1 star</label>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="form-group">
-                        <label class="about_us white_txt" for="exampleInputEmail1">Feedback</label>
-                        <textarea name="comment" id="comment" cols="30" rows="5"
-                                  class="form-control" required></textarea>
-                        <span class="text-danger">{{ $errors->first('comment') }}</span>
-                    </div>
-                </div>
-                <div class="col-lg-12" style="margin-bottom : 50px">
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-danger">Submit</button>
-                    </div>
-                </div>
-            </div>
-        </form>
+<div class="row bg-white pl-5">
+    <div class="col-md-12">
+        <h4 class="border-bottom pb-3">Reviews</h4>
+        <table class="table table-borderless">
+            <tbody>
+            @foreach($movie->reviews as $review)
+                <tr>
+                    <td width="80%" class="">
+                        <p class="mb-0">{{ $review->user->name }}</p>
+                        <p class="mb-0">{{ \Carbon\Carbon::parse($review->created_at)->format('d M, Y h:i A') }}</p>
+                        <p class="mb-0">
+                            @for($i = 1; $i <= $review->rating; $i++)
+                                <i class="fa fa-star" style="color: orange"></i>
+                            @endfor
+                            ({{ $review->rating }})</p>
+                        <p class="">{{ $review->comment }}</p>
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
     </div>
+    @if(auth()->user() && !auth()->user()->userReview)
+        <div class="col-lg-8">
+            <h4 class="about_us white_txt">Write Your Feedback</h4>
+            <form action="{{ route('review.store') }}" method="post">@csrf
+                <input type="hidden" name="movie_id" value="{{ $movie->id }}">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="rate">
+                            <input type="radio" id="star5" name="rate" value="5"/>
+                            <label for="star5" title="text" class=>5 stars</label>
+                            <input type="radio" id="star4" name="rate" value="4"/>
+                            <label for="star4" title="text" class=>4 stars</label>
+                            <input type="radio" id="star3" name="rate" value="3"/>
+                            <label for="star3" title="text" class=>3 stars</label>
+                            <input type="radio" id="star2" name="rate" value="2"/>
+                            <label for="star2" title="text" class=>2 stars</label>
+                            <input type="radio" id="star1" name="rate" value="1"/>
+                            <label for="star1" title="text" class=>1 star</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="about_us" for="exampleInputEmail1">Feedback</label>
+                            <textarea name="comment" id="comment" cols="30" rows="5"
+                                      class="form-control" required></textarea>
+                            <span class="text-danger">{{ $errors->first('comment') }}</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" style="margin-bottom : 50px">
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-danger">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    @endif
+</div>
 <!-- Footer Section Begin -->
 <footer class="footer">
     <div class="page-up">
@@ -337,7 +346,8 @@
             <div class="col-lg-3">
                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                    All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by
+                    All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i>
+                    by
                     <a href="https://colorlib.com" target="_blank">Colorlib</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 
