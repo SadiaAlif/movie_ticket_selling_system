@@ -284,7 +284,7 @@
             </tbody>
         </table>
     </div>
-    @if(auth()->user() && !auth()->user()->userReview)
+    @if(auth()->user() && !$movie->userReview)
         <div class="col-lg-8">
             <h4 class="about_us white_txt">Write Your Feedback</h4>
             <form action="{{ route('review.store') }}" method="post">@csrf

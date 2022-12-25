@@ -1,13 +1,13 @@
 @extends('admin.partials.master')
 
 @section('page-title')
-  <title>Category</title>
+  <title>Genre</title>
 @endsection
 
 @section('page-content')
 <div class="container-xxl flex-grow-1 container-p-y">
   <div class="card">
-    <h5 class="card-header">All Category</h5>
+    <h5 class="card-header">All Genre</h5>
     <div class="table-responsive text-nowrap">
       <table class="table table-striped">
         <thead>

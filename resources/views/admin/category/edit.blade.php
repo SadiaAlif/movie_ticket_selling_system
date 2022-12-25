@@ -1,7 +1,7 @@
 @extends('admin.partials.master')
 
 @section('page-title')
-  <title>Category Create</title>
+  <title>Genre Create</title>
 @endsection
 
 @section('page-content')

@@ -45,4 +45,8 @@ class Movie extends Model
     {
         return $this->reviews()->avg('rating');
     }
+    public function userReview()
+    {
+        return $this->hasOne(Review::class)->where('user_id', auth()->id());
+    }
 }
